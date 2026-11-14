@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OSINT Vault | Catálogo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/catalogo.css" />
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<div class="layout">
+  <aside>
+    <div class="filter-group">
+      <div class="filter-group-title">Alvos</div>
+      <button class="tag-btn" data-tag="alvo/pessoa-identidade">pessoa-identidade <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="alvo/usuario-email">usuário-email <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="alvo/telefone">telefone <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="alvo/empresa">empresa <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="alvo/financeiro-crypto">financeiro-crypto <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="alvo/veiculo">veículo <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="alvo/dominio">domínio <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="alvo/ip">ip <span class="badge">—</span></button>
+    </div>
+
+    <div class="filter-group">
+      <div class="filter-group-title">Fontes</div>
+      <button class="tag-btn" data-tag="fonte/redes-sociais">redes sociais <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="fonte/vazamentos-darkweb">vazamentos-darkweb <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="fonte/geoespacial">geoespacial <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="fonte/registros-publicos-gov">registros-públicos-gov <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="fonte/arquivos-noticias">arquivos-notícias <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="fonte/repositorio">repositório <span class="badge">—</span></button>
+    </div>
+
+    <div class="filter-group">
+      <div class="filter-group-title">Funções</div>
+      <button class="tag-btn" data-tag="func/busca-identificacao">busca-identificação <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="func/busca-dorks">busca-dorks <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="func/scrapers-automacao">scrapers-automação <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="func/busca-ampla">busca-ampla <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="func/agregador">agregador <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="func/validacao-status">validação-status <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="func/analise-midia-integridade">análise-mídia <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="func/infraestrutura-cybint">infra-cybint <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="func/analise-visualizacao">análise-visualização <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="func/analise-processamento-ia">processamento-ia <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="func/forense-local">forense-local <span class="badge">—</span></button>
+    </div>
+
+    <div class="filter-group">
+      <div class="filter-group-title">Plataforma</div>
+      <button class="tag-btn" data-tag="plataforma/web">web <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="plataforma/desktop">desktop <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="plataforma/terminal">terminal <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="plataforma/mobile">mobile <span class="badge">—</span></button>
+    </div>
+
+    <div class="filter-group">
+      <div class="filter-group-title">Acesso</div>
+      <button class="tag-btn" data-tag="acesso/gratuito">gratuito <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="acesso/pago">pago <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="acesso/limitado">limitado <span class="badge">—</span></button>
+    </div>
+
+    <div class="filter-group">
+      <div class="filter-group-title">OPSEC</div>
+      <button class="tag-btn" data-tag="opsec/ambiente-seguro">ambiente-seguro <span class="badge">—</span></button>
+      <button class="tag-btn" data-tag="opsec/personas">personas <span class="badge">—</span></button>
+    </div>
+
+    <button class="clear-filters" id="clearFilters">⊘ LIMPAR FILTROS</button>
+  </aside>  
+
+  <main>
+    <div class="hero">
+      <h1 class="hero-title">
+        CATÁLOGO OSINT
+        <button class="help-trigger-btn" id="toggleGlossaryBtn" title="Glossário Métrico de Tags">[ ? ]</button>
+      </h1>
+      <p class="hero-sub">INTELLIGENCE ASSET MANAGEMENT SYSTEM</p>
+
+      <div class="tag-glossary-panel" id="tagGlossaryPanel">
+        <div class="modal-section-title modal-section-title--flush">DIRETRIZES DE FILTRAGEM DO REPOSITÓRIO</div>
+        <p class="glossary-intro">// Entenda a árvore taxonômica estrutural das chaves de indexação</p>
+        
+        <div class="glossary-grid">
+          <div class="glossary-cat">
+            <div class="glossary-cat-title">1. Alvos e Entidades (alvo/)</div>
+            <div class="glossary-item"><strong>pessoa-identidade:</strong> Dados biográficos e civis: nomes, CPF, certidões, genealogia.</div>
+            <div class="glossary-item"><strong>usuario-email:</strong> E-mails, usernames, UIDs e vínculos de contas entre serviços.</div>
+            <div class="glossary-item"><strong>telefone:</strong> Operadora, HLR, identificação de chamadas e mensageria.</div>
+            <div class="glossary-item"><strong>empresa:</strong> CNPJ, QSA, balanços, juntas comerciais e processos.</div>
+            <div class="glossary-item"><strong>financeiro-crypto:</strong> Fluxos financeiros, carteiras e transações em blockchain.</div>
+            <div class="glossary-item"><strong>veiculo:</strong> Placas, chassis, aeronaves, embarcações e frotas.</div>
+            <div class="glossary-item"><strong>dominio:</strong> WHOIS, DNS, subdomínios, MX e certificados SSL/TLS.</div>
+            <div class="glossary-item"><strong>ip:</strong> Geolocalização cadastral, ASN, portas e serviços expostos.</div>
+          </div>
+
+          <div class="glossary-cat">
+            <div class="glossary-cat-title">2. Fontes de Dados (fonte/)</div>
+            <div class="glossary-item"><strong>redes-sociais:</strong> Coleta pública em redes sociais (SOCMINT).</div>
+            <div class="glossary-item"><strong>vazamentos-darkweb:</strong> Leaks, dumps, senhas expostas, fóruns e rede Tor.</div>
+            <div class="glossary-item"><strong>geoespacial:</strong> Satélite, mapas, street view, câmeras, AIS e ADS-B (GEOINT).</div>
+            <div class="glossary-item"><strong>registros-publicos-gov:</strong> Diários oficiais, transparência, Receita e tribunais.</div>
+            <div class="glossary-item"><strong>arquivos-noticias:</strong> Wayback Machine, acervos digitais e imprensa.</div>
+            <div class="glossary-item"><strong>repositorio:</strong> Diretórios e listas curadas de ferramentas OSINT.</div>
+          </div>
+
+          <div class="glossary-cat">
+            <div class="glossary-cat-title">3. Função e Capacidade (func/)</div>
+            <div class="glossary-item"><strong>busca-identificacao:</strong> Pivoting a partir de um dado conhecido (busca direta).</div>
+            <div class="glossary-item"><strong>busca-dorks:</strong> Operadores avançados e Google Dorks (busca por indexação).</div>
+            <div class="glossary-item"><strong>scrapers-automacao:</strong> Coleta automatizada de grandes volumes (busca massiva).</div>
+            <div class="glossary-item"><strong>busca-ampla:</strong> Motores e metabuscadores globais, datasets abertos.</div>
+            <div class="glossary-item"><strong>agregador:</strong> Plataformas que reúnem várias fontes em uma interface.</div>
+            <div class="glossary-item"><strong>validacao-status:</strong> Confirma se uma conta ou dado existe e está ativo.</div>
+            <div class="glossary-item"><strong>analise-midia-integridade:</strong> Busca reversa, EXIF, deepfakes e veracidade de mídia.</div>
+            <div class="glossary-item"><strong>infraestrutura-cybint:</strong> Validação técnica de redes, DNS, WHOIS e SSL.</div>
+            <div class="glossary-item"><strong>analise-visualizacao:</strong> Grafos, mapas mentais e linhas do tempo.</div>
+            <div class="glossary-item"><strong>analise-processamento-ia:</strong> LLMs para resumir, estruturar e extrair entidades de textos.</div>
+            <div class="glossary-item"><strong>forense-local:</strong> Análise de arquivos, strings e código já coletados.</div>
+          </div>
+
+          <div class="glossary-cat">
+            <div class="glossary-cat-title">4. Ambiente e Execução (plataforma/ e acesso/)</div>
+            <div class="glossary-item"><strong>plataforma/web:</strong> Roda no navegador (SaaS, portais, extensões).</div>
+            <div class="glossary-item"><strong>plataforma/desktop:</strong> Software instalável (Windows, Linux, macOS).</div>
+            <div class="glossary-item"><strong>plataforma/terminal:</strong> Scripts e binários de linha de comando.</div>
+            <div class="glossary-item"><strong>plataforma/mobile:</strong> Aplicativos Android/iOS.</div>
+            <div class="glossary-item"><strong>acesso/gratuito:</strong> Totalmente gratuito ou código aberto.</div>
+            <div class="glossary-item"><strong>acesso/pago:</strong> Exige assinatura, licença ou créditos.</div>
+            <div class="glossary-item"><strong>acesso/limitado:</strong> Freemium: uso gratuito com cotas ou recursos bloqueados.</div>
+          </div>
+
+          <div class="glossary-cat">
+            <div class="glossary-cat-title">5. OPSEC e Defesa (opsec/)</div>
+            <div class="glossary-item"><strong>ambiente-seguro:</strong> VPN, Tor, navegadores blindados e máquinas virtuais.</div>
+            <div class="glossary-item"><strong>personas:</strong> Identidades sintéticas, números e e-mails descartáveis, Sock Puppets.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="search-wrap">
+        <span class="icon">🔍</span>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Buscar por nome, descrição, URL, tag..."
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button class="search-clear" id="searchClear" title="Limpar">✕</button>
+      </div>
+      <div class="search-count" id="searchCount"></div>
+    </div>
+
+    <div class="toolbar">
+      <div class="toolbar-left">
+        EXIBINDO <strong id="visibleCount">0</strong> de <strong id="totalCountBar">0</strong> FERRAMENTAS
+        <span class="active-filters-badge" id="activeFiltersBadge"></span>
+      </div>
+      <div class="view-btns">
+        <button class="view-btn active" id="gridBtn" title="Grade">⊞</button>
+        <button class="view-btn" id="listBtn" title="Lista">≡</button>
+      </div>
+    </div>
+
+    <div class="cards" id="cardsContainer"></div>
+  </main>
+</div>
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modalClose">✕</button>
+
+    <div class="modal-title" id="modalTitle">—</div>
+    <div class="modal-url-row">
+      <div class="modal-url"><a id="modalUrl" href="#" target="_blank">—</a></div>
+    </div>
+
+    <div class="modal-tabs">
+      <button class="modal-tab active" data-tab="visao-geral">Visão Geral</button>
+      <button class="modal-tab" data-tab="utilidade-osint">Utilidade em OSINT</button>
+      <button class="modal-tab" data-tab="notas">Notas de Uso</button>
+    </div>
+
+    <div class="modal-panel active" id="panel-visao-geral">
+      <div class="modal-section-title">DESCRIÇÃO</div>
+      <div class="modal-desc" id="modalDesc">—</div>
+
+      <div class="modal-section-title">TAGS</div>
+      <div class="modal-tags" id="modalTags"></div>
+
+      <div class="tool-verification" id="toolVerification" hidden></div>
+    </div>
+
+    <div class="modal-panel" id="panel-utilidade-osint">
+      <div class="modal-notes" id="modalTagReasons"></div>
+    </div>
+
+    <div class="modal-panel" id="panel-notas">
+      <div class="modal-notes" id="modalNotes">—</div>
+    </div>
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/data.js"></script>
+<script src="js/components.js"></script>
+<script src="js/app.js"></script>
+<script>
+  UI.loadHeader('');
+  UI.loadFooter();
+
+  const toggleBtn = document.getElementById('toggleGlossaryBtn');
+  const glossaryPanel = document.getElementById('tagGlossaryPanel');
+
+  if (toggleBtn && glossaryPanel) {
+    toggleBtn.addEventListener('click', () => {
+      const aberto = glossaryPanel.classList.toggle('is-open');
+      toggleBtn.classList.toggle('is-open', aberto);
+      toggleBtn.textContent = aberto ? '[ X ]' : '[ ? ]';
+    });
+  }
+</script>
+</body>
+</html>
