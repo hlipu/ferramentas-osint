@@ -8,7 +8,7 @@ registerPivot({
   "tipo": "alvo",
   "icone": "✉️",
   "titulo": "Investigação por E-mail",
-  "subtitulo": "// Roteiro metodológico para validação, enumeração, pivoting e desanonimização de endereços eletrônicos.",
+  "subtitulo": "// Roteiro metodológico para validação, enumeração, pivoting e identificação do titular de endereços eletrônicos.",
   "imagem": "../img/trilha-email.jpg",
   "modulos": [
     {
@@ -94,14 +94,14 @@ registerPivot({
         "nota": "🟢 PASSIVO"
       },
       "vetor": "E-mail / Username / Telefone ➔ Redes Sociais / Plataformas / Serviços (SaaS)",
-      "objetivo": "Descobrir a pegada digital (digital footprint) do alvo, mapeando em quais sites, aplicativos, redes sociais e serviços de terceiros o e-mail ou username investigado foi utilizado para registrar uma conta, sem alertar o investigado.",
+      "objetivo": "Descobrir a pegada digital (digital footprint) do alvo, mapeando em quais sites, aplicativos, redes sociais e serviços de terceiros o e-mail ou username investigado foi utilizado para registrar uma conta, por consultas passivas.",
       "camadas": [
         {
           "id": "email-02-c1",
           "titulo": "Redes Sociais e Plataformas Globais (Varreduras Automatizadas)",
           "conceito": "Busca automatizada em larga escala para mapear a presença digital do alvo em centenas de sites e serviços online simultaneamente.",
           "comoFunciona": "A ferramenta interage com os fluxos de login, registro ou recuperação de senha das plataformas para confirmar a existência da conta associada àquele endereço.",
-          "utilidadeOsint": "Essencial para o pivoting de identidade (SOCMINT), permitindo expandir a investigação revelando novos usernames, fotos de perfil e nomes reais de forma silenciosa.",
+          "utilidadeOsint": "Essencial para o pivoting de identidade (SOCMINT), permitindo expandir a investigação revelando novos usernames, fotos de perfil e nomes reais por consultas passivas.",
           "tools": [
             {
               "id": "Epieos",
@@ -137,55 +137,6 @@ registerPivot({
           },
           "excluir": [
             "Stolen Camera Finder"
-          ]
-        },
-        {
-          "id": "email-02-c2",
-          "titulo": "Telas de Recuperação de Senha (Validações Manuais / Regionais)",
-          "conceito": "Verificação cirúrgica em plataformas locais, nacionais ou sistemas corporativos específicos não cobertos pelas varreduras globais.",
-          "comoFunciona": "O analista insere ativamente o CPF, telefone ou e-mail nas páginas de \"Esqueci minha senha\" e observa as respostas do servidor (se o usuário não é encontrado ou se o sistema avança para envio de token).",
-          "utilidadeOsint": "Identifica vínculos e hábitos do alvo com ecossistemas de compras, operadoras de telefonia e carteiras digitais, servindo como validador de identidade seguro.",
-          "tools": [
-            {
-              "id": "PagSeguro (Tela de Acesso / Recuperação)",
-              "aplicacao": "Permite submeter dados cadastrais para verificar vínculos de contas e a existência de atividade financeira associada ao ecossistema do PagBank.",
-              "opsec": "ativo",
-              "alerta": "Tela de recuperação de senha ou de login usada para checar se um e-mail, CPF ou telefone tem conta. Pode notificar o titular, registra o IP de quem consulta e não deve ser automatizada: só manual e com base legal."
-            },
-            {
-              "id": "Reclame Aqui (Recuperação de Senha)",
-              "aplicacao": "Ao inserir o CPF ou o e-mail de um alvo, permite confirmar se ele possui uma conta ativa na maior plataforma de consumo do Brasil, fornecendo indícios sobre seus hábitos digitais.",
-              "opsec": "ativo",
-              "alerta": "Tela de recuperação de senha ou de login usada para checar se um e-mail, CPF ou telefone tem conta. Pode notificar o titular, registra o IP de quem consulta e não deve ser automatizada: só manual e com base legal."
-            },
-            {
-              "id": "Tela de Recuperação de Senha - Vivo (Meu Vivo)",
-              "aplicacao": "Permite determinar se um identificador está ativamente associado a um cliente da operadora, auxiliando na redução do escopo de alvos e na confirmação de vínculos de telecomunicações.",
-              "opsec": "ativo",
-              "alerta": "Tela de recuperação de senha ou de login usada para checar se um e-mail, CPF ou telefone tem conta. Pode notificar o titular, registra o IP de quem consulta e não deve ser automatizada: só manual e com base legal."
-            },
-            {
-              "nome": "Varejistas Diversos: Casas Bahia / Extra / Magalu",
-              "url": "Múltiplas URLs",
-              "aplicacao": "O uso de plataformas do varejo permite verificar a existência de vínculo comercial de um determinado CPF sem gerar alertas, notificações por SMS ou e-mails de tentativa de invasão para o dispositivo do alvo na fase inicial de inserção.",
-              "externo": true
-            },
-            {
-              "id": "Recuperação de Senha - Claro",
-              "aplicacao": "Adição tática para realizar a validação passiva e constatar se o CPF investigado possui serviços de telecomunicação contratados junto à Claro, ajudando a direcionar ordens ou investigações telefônicas.",
-              "opsec": "ativo",
-              "alerta": "Tela de recuperação de senha ou de login usada para checar se um e-mail, CPF ou telefone tem conta. Pode notificar o titular, registra o IP de quem consulta e não deve ser automatizada: só manual e com base legal."
-            }
-          ],
-          "regra": {
-            "tags": [
-              "alvo/pessoa-identidade",
-              "func/validacao-status"
-            ],
-            "auto": true
-          },
-          "excluir": [
-            "Certidão de Feitos Trabalhistas (TRT-3)"
           ]
         }
       ]
@@ -238,7 +189,7 @@ registerPivot({
           "titulo": "Megavazamentos e Dumps (Motores Indexadores)",
           "conceito": "Verificação de comprometimento em incidentes massivos de segurança ou motores de busca voltados para rastrear dados hospedados de forma descentralizada e obscura.",
           "comoFunciona": "O sistema compara o identificador digital do alvo com bases indexadas de violações globais ou rastreia a Surface/Dark Web catalogando vazamentos.",
-          "utilidadeOsint": "Revela plataformas nas quais a identidade possuiu cadastro, provendo leads sem alertar o investigado e mapeando a pegada digital exposta na Dark Web.",
+          "utilidadeOsint": "Revela plataformas nas quais a identidade possuiu cadastro, provendo leads por consulta passiva e mapeando a pegada digital exposta na Dark Web.",
           "tools": [
             {
               "id": "Have I Been Pwned (HIBP)",
@@ -295,14 +246,14 @@ registerPivot({
     },
     {
       "num": "04",
-      "nome": "Desanonimização & Perfilamento",
+      "nome": "Identificação & Perfil",
       "icone": "🧩",
       "opsec": {
         "nivel": "passivo",
         "nota": "🟢 PASSIVO / 🟡 CAUTELA (em ferramentas de IA e biometria comercial)"
       },
       "vetor": "Identificador (E-mail / Telefone / Username / Foto) ➔ Identidade Real / Pegada Digital / Redes de Relacionamento",
-      "objetivo": "Desanonimizar perfis ocultos, descobrir o nome real, rosto e hábitos do alvo, além de mapear e monitorar a sua presença digital de forma abrangente utilizando agregação de dados, buscas reversas e inteligência artificial.",
+      "objetivo": "Identificar o responsável por perfis anônimos e reunir o nome real, a foto e a presença digital associados ao e-mail, utilizando agregação de dados, buscas reversas e inteligência artificial.",
       "camadas": [
         {
           "id": "email-04-c1",
@@ -313,11 +264,11 @@ registerPivot({
           "tools": [
             {
               "id": "Epieos",
-              "aplicacao": "Consulta de forma passiva diversas APIs de plataformas globais para extrair identificadores exclusivos (como o GAIA ID), nomes reais, fotos de perfil e avaliações no Google Maps vinculadas ao e-mail, sem alertar o alvo."
+              "aplicacao": "Consulta de forma passiva diversas APIs de plataformas globais para extrair identificadores exclusivos (como o GAIA ID), nomes reais, fotos de perfil e avaliações no Google Maps vinculadas ao e-mail."
             },
             {
               "id": "Truecaller",
-              "aplicacao": "A partir de um número de telefone suspeito, o analista pode descobrir o nome ou apelido associado ao proprietário da linha, a operadora e a localização cadastral, ajudando a desanonimizar o portador do contato."
+              "aplicacao": "A partir de um número de telefone suspeito, o analista pode descobrir o nome ou apelido associado ao proprietário da linha, a operadora e a localização cadastral, ajudando a identificar o titular do contato."
             }
           ],
           "regra": {
@@ -563,7 +514,6 @@ registerPivot({
             "HEDnsExtractor",
             "HNSSearch",
             "Shodan Dorks - s1rn3tz",
-            "Canal de Verificação de Canais Oficiais - Porto Seguro",
             "TorWhois",
             "FaviHash"
           ]

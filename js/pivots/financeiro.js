@@ -50,7 +50,7 @@ registerPivot({
         },
         {
           "id": "financeiro-01-c3",
-          "titulo": "Desanonimização e Inteligência de Ameaças em Web3",
+          "titulo": "Identificação e Inteligência de Ameaças em Web3",
           "conceito": "Busca de vínculos diretos entre carteiras de criptoativos e identidades do mundo real (Web2) ou registros de atividades fraudulentas e extorsões.",
           "comoFunciona": "A partir de um hash de carteira, o analista consulta indexadores de fraudes, ecossistemas de mensageria descentralizada e domínios Web3 para revelar nomes, e-mails ou usernames atrelados ao ativo financeiro.",
           "utilidadeOsint": "Fundamental para realizar a ponte de atribuição técnica (pivoting). Permite verificar se a carteira já foi reportada publicamente em esquemas criminosos ou localizar a identidade do operador rastreando os metadados cadastrados em contratos inteligentes.",
@@ -424,7 +424,6 @@ registerPivot({
           },
           "excluir": [
             "Certidão de Feitos Trabalhistas (TRT-3)",
-            "Canal de Verificação de Canais Oficiais - Porto Seguro",
             "Consulta de Frota Geral - ANTAQ",
             "Consulta de Embarcações - ANTAQ"
           ]

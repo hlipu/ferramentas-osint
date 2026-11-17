@@ -1,7 +1,7 @@
 # OSINT LIPU — Catálogo de Ferramentas OSINT
 
 Catálogo de ferramentas de **Inteligência de Fontes Abertas (OSINT)** com foco no contexto brasileiro.
-São 473 ferramentas descritas e classificadas, com dicas de uso, cuidados de privacidade e o resultado
+São 463 ferramentas descritas e classificadas, com dicas de uso, cuidados de privacidade e o resultado
 de testes práticos.
 
 ## Como abrir
@@ -75,7 +75,5 @@ Este catálogo serve a investigações legítimas.
 
 - Várias ferramentas tratam **dados pessoais**: use-as só com base legal e respeite a LGPD.
 - Prefira consultas passivas e leia os alertas nas notas antes de usar uma ferramenta.
-- **Telas de recuperação de senha e de login** estão marcadas com alerta: podem avisar o titular da
-  conta e registram quem consulta.
 - Muitos serviços guardam o que você envia (fotos, documentos, buscas). Não envie material sensível de
   um caso sem saber para onde ele vai.

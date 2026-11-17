@@ -353,12 +353,12 @@ registerPivot({
         "nivel": "ativo",
         "nota": "🔴 ATIVO — exige interação do alvo; avalie a base legal antes de usar"
       },
-      "vetor": "E-mail / Telefone / Perfil ➔ Link ou arquivo-isca ➔ IP real / Dispositivo / Horário de acesso",
+      "vetor": "E-mail / Telefone / Perfil ➔ Link ou arquivo rastreável ➔ IP real / Dispositivo / Horário de acesso",
       "objetivo": "Obter o IP real do alvo quando nenhuma fonte passiva o revela, enviando um link ou documento que registra quem o abre. Só é recomendado com respaldo legal e plano de OPSEC, pois pode expor a investigação.",
       "camadas": [
         {
           "id": "ip-06-c1",
-          "titulo": "Links e Armadilhas de Rastreamento",
+          "titulo": "Links e Arquivos de Rastreamento",
           "conceito": "Links encurtados e tokens que registram IP, user-agent e horário de quem os acessa.",
           "comoFunciona": "Gera-se um link ou arquivo rastreável, entrega-se ao alvo por um canal plausível e coleta-se o registro do acesso.",
           "utilidadeOsint": "Fornece IP, sistema operacional, navegador e horário do alvo, que alimentam os módulos 01 a 05 desta pivotagem.",

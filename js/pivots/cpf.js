@@ -567,7 +567,7 @@ registerPivot({
         "nota": "🟡 ATIVO INDIRETO / 🟢 PASSIVO"
       },
       "vetor": "CPF ➔ Linhas Telefônicas / Operadoras Associadas / Logins em Plataformas de Consumo",
-      "objetivo": "Realizar um mapeamento silencioso do consumo e das linhas móveis do indivíduo. Técnica vital para confirmar hábitos digitais sem alertar diretamente o alvo (OPSEC).",
+      "objetivo": "Mapear, por fontes passivas, o consumo e as linhas móveis do indivíduo. Prioriza consultas passivas, sem contato direto com a pessoa investigada (OPSEC).",
       "camadas": [
         {
           "id": "cpf-06-c1",
@@ -599,92 +599,6 @@ registerPivot({
             ],
             "auto": true
           }
-        },
-        {
-          "id": "cpf-06-c2",
-          "titulo": "Extração via Fluxos de Recuperação de Senhas (E-commerces e Telecom)",
-          "conceito": "Tática onde o analista insere o CPF nas páginas de 'Esqueci minha senha' de grandes e-commerces e provedores, forçando o sistema a confirmar se o alvo é cliente e/ou mascarar trechos de e-mails e celulares na tela.",
-          "comoFunciona": "O sistema processa o CPF antes de mandar qualquer alerta ao titular. Se a tela mudar de 'Usuário Inexistente' para 'Como você quer receber seu código?', prova-se que o CPF possui histórico ativo no varejo.",
-          "utilidadeOsint": "Viabiliza a validação passiva de vínculos institucionais e a existência de contas ativas do alvo. Checa histórico de consumo de varejo massivo e expõe fragmentos do e-mail pessoal ou do final do telefone do investigado para cruzamento de dados.",
-          "tools": [
-            {
-              "id": "Reclame Aqui (Recuperação de Senha)",
-              "aplicacao": "Valida se o usuário é um consumidor ativo online. Ao inserir o CPF, a interface confirma a existência do cadastro, fornecendo indícios sobre seus hábitos digitais sem notificá-lo.",
-              "opsec": "ativo",
-              "alerta": "Tela de recuperação de senha ou de login usada para checar se um e-mail, CPF ou telefone tem conta. Pode notificar o titular, registra o IP de quem consulta e não deve ser automatizada: só manual e com base legal."
-            },
-            {
-              "id": "Recuperação de Senha - Casas Bahia",
-              "aplicacao": "Checa o histórico de consumo de varejo massivo. Permite verificar o vínculo comercial de um CPF sem gerar notificações por SMS ou e-mails de tentativa de invasão para o alvo.",
-              "opsec": "ativo",
-              "alerta": "Tela de recuperação de senha ou de login usada para checar se um e-mail, CPF ou telefone tem conta. Pode notificar o titular, registra o IP de quem consulta e não deve ser automatizada: só manual e com base legal."
-            },
-            {
-              "id": "Recuperação de Senha - Extra Hipermercados",
-              "aplicacao": "Ideal para compor rotinas de pivoting e enriquecimento de perfis, validando passivamente que o investigado realiza compras online na rede do grupo empresarial.",
-              "opsec": "ativo",
-              "alerta": "Tela de recuperação de senha ou de login usada para checar se um e-mail, CPF ou telefone tem conta. Pode notificar o titular, registra o IP de quem consulta e não deve ser automatizada: só manual e com base legal."
-            },
-            {
-              "id": "Recuperação de Senha - Magazine Luiza",
-              "aplicacao": "Opera com o mesmo mecanismo de validação passiva para certificar a presença digital e comercial do investigado sem levantar suspeitas.",
-              "opsec": "ativo",
-              "alerta": "Tela de recuperação de senha ou de login usada para checar se um e-mail, CPF ou telefone tem conta. Pode notificar o titular, registra o IP de quem consulta e não deve ser automatizada: só manual e com base legal."
-            },
-            {
-              "id": "Recuperação de Senha - Claro",
-              "aplicacao": "Confirma de imediato o vínculo do CPF a serviços residenciais ou móveis de telecomunicação na Claro, auxiliando no direcionamento de investigações telefônicas.",
-              "opsec": "ativo",
-              "alerta": "Tela de recuperação de senha ou de login usada para checar se um e-mail, CPF ou telefone tem conta. Pode notificar o titular, registra o IP de quem consulta e não deve ser automatizada: só manual e com base legal."
-            },
-            {
-              "id": "Tela de Recuperação de Senha - Vivo (Meu Vivo)",
-              "aplicacao": "Permite determinar passivamente se o CPF está ativamente associado a um cliente da Vivo por meio da observação das mensagens de erro ou de redefinição da interface.",
-              "opsec": "ativo",
-              "alerta": "Tela de recuperação de senha ou de login usada para checar se um e-mail, CPF ou telefone tem conta. Pode notificar o titular, registra o IP de quem consulta e não deve ser automatizada: só manual e com base legal."
-            }
-          ],
-          "regra": {
-            "tags": [
-              "alvo/pessoa-identidade",
-              "func/validacao-status"
-            ],
-            "auto": true
-          },
-          "excluir": [
-            "Certidão de Feitos Trabalhistas (TRT-3)"
-          ]
-        },
-        {
-          "id": "cpf-06-c3",
-          "titulo": "Validação em Plataformas Financeiras e Governamentais",
-          "conceito": "Exploração dos fluxos de recuperação de senha em gateways de pagamento e portais municipais para inferir a atuação financeira e vínculos geográficos do alvo.",
-          "comoFunciona": "Aplica-se a técnica de redefinição de acesso em sistemas de fintechs ou prefeituras. O avanço do formulário comprova que o indivíduo movimentou fundos na ferramenta ou é registrado administrativamente na região.",
-          "utilidadeOsint": "Fundamental para investigações de fraudes e rastreio financeiro. Comprova o uso de carteiras digitais específicas ou aponta que o alvo possui operações formalizadas em determinado município.",
-          "tools": [
-            {
-              "id": "PagSeguro (Tela de Acesso / Recuperação)",
-              "aplicacao": "Ao inserir um dado conhecido na área de recuperação de conta, o investigador pode constatar a existência da conta financeira ou obter fragmentos ofuscados do e-mail e telefone utilizados na carteira digital.",
-              "opsec": "ativo",
-              "alerta": "Tela de recuperação de senha ou de login usada para checar se um e-mail, CPF ou telefone tem conta. Pode notificar o titular, registra o IP de quem consulta e não deve ser automatizada: só manual e com base legal."
-            },
-            {
-              "id": "Senha Web (Recuperação de Senha) - Prefeitura de São Paulo",
-              "opsec": "ativo",
-              "alerta": "Tela de recuperação de senha ou de login usada para checar se um e-mail, CPF ou telefone tem conta. Pode notificar o titular, registra o IP de quem consulta e não deve ser automatizada: só manual e com base legal."
-            }
-          ],
-          "regra": {
-            "tags": [
-              "alvo/pessoa-identidade",
-              "fonte/registros-publicos-gov",
-              "func/validacao-status"
-            ],
-            "auto": true
-          },
-          "excluir": [
-            "Certidão de Feitos Trabalhistas (TRT-3)"
-          ]
         }
       ]
     }

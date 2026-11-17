@@ -64,7 +64,7 @@ registerPivot({
         {
           "id": "telefone-01-c2",
           "titulo": "Engenharia Reversa e Validação em Plataformas Digitais",
-          "conceito": "Utilização do número telefônico tecnicamente validado para desanonimizar o alvo através de catálogos colaborativos e APIs de redes sociais.",
+          "conceito": "Utilização do número telefônico tecnicamente validado para identificar o titular através de catálogos colaborativos e APIs de redes sociais.",
           "comoFunciona": "Ferramentas realizam o 'Reverse Phone Lookup' consultando listas de contatos crowdsourced ou submetem o número a endpoints de mensageria para confirmar atividade e extrair dados biográficos.",
           "utilidadeOsint": "Essencial para descobrir o nome civil ou apelido do proprietário da linha, confirmar seu uso em aplicativos como o WhatsApp e expandir o rastreio (pivoting) do alvo para outras redes na internet sem qualquer interação direta com ele.",
           "tools": [
@@ -103,7 +103,7 @@ registerPivot({
       "camadas": [
         {
           "id": "telefone-02-c1",
-          "titulo": "Validação Silenciosa em Mensageiros (WhatsApp)",
+          "titulo": "Validação Passiva em Mensageiros (WhatsApp)",
           "conceito": "Envio de requisições web para os endpoints das plataformas de mensagens a fim de checar o status de registro da conta sem adicioná-la a uma agenda telefônica pessoal.",
           "comoFunciona": "As plataformas disparam chamadas de API simulando a tentativa de interação ou verificação de registro para atestar se o número possui uma conta ativa, extraindo metadados de operadora e presença sem que o aplicativo do alvo seja notificado.",
           "utilidadeOsint": "Otimiza o fluxo de investigação validando instantaneamente se o número serve como ponte para capturar imagens e metadados de contas comerciais ou pessoais, garantindo que o investigado não seja alertado da vigilância.",
@@ -238,8 +238,8 @@ registerPivot({
           "id": "telefone-03-c3",
           "titulo": "Mapeamento Avançado de Pegada Digital",
           "conceito": "Identificação de contas digitais, perfis profissionais e registros em redes sociais a partir do número de telefone.",
-          "comoFunciona": "Sistemas consultam em tempo real as APIs de diversas redes sociais e serviços web para verificar vínculos telefônicos, extraindo nomes e perfis sem notificar o alvo da pesquisa.",
-          "utilidadeOsint": "Revela nomes civis e fotos de perfil adotados pelo alvo em plataformas web e de comércio eletrônico que exigem verificação telefônica (SMS), ajudando a confirmar sua identidade visual de maneira silenciosa.",
+          "comoFunciona": "Sistemas consultam em tempo real as APIs de diversas redes sociais e serviços web para verificar vínculos telefônicos, extraindo nomes e perfis por consulta passiva.",
+          "utilidadeOsint": "Revela nomes civis e fotos de perfil adotados pelo alvo em plataformas web e de comércio eletrônico que exigem verificação telefônica (SMS), ajudando a confirmar sua identidade visual.",
           "tools": [
             {
               "id": "OSINT Industries",
@@ -258,13 +258,13 @@ registerPivot({
         "nota": "🟢 PASSIVO"
       },
       "vetor": "Número de Telefone ➔ Google ID / Contas Vinculadas em Redes Sociais",
-      "objetivo": "Desanonimizar o alvo rastreando em quais sites, redes sociais e fóruns da internet aquele número de telefone foi empregado como método de registro ou como chave de recuperação de conta (autenticação).",
+      "objetivo": "Identificar o titular verificando em quais sites, redes sociais e fóruns da internet aquele número de telefone foi empregado como método de registro ou como chave de recuperação de conta (autenticação).",
       "camadas": [
         {
           "id": "telefone-04-c1",
           "titulo": "Rastreio Passivo Multiplataforma",
           "conceito": "Automação de requisições de recuperação de senha ou sincronização de contatos em APIs abertas para confirmar a existência da conta do alvo.",
-          "comoFunciona": "As plataformas enviam requisições de forma automatizada para os endpoints de dezenas de serviços da web, analisando os códigos de resposta dos servidores para confirmar a existência da conta associada ao telefone sem notificar o alvo.",
+          "comoFunciona": "As plataformas enviam requisições de forma automatizada para os endpoints de dezenas de serviços da web, analisando os códigos de resposta dos servidores para confirmar a existência da conta associada ao telefone.",
           "utilidadeOsint": "Transforma um simples número de telefone na 'pegada digital' inteira do indivíduo, expondo conexões no ecossistema Google, Skype, entre dezenas de outros.",
           "tools": [
             {
@@ -273,7 +273,7 @@ registerPivot({
             },
             {
               "id": "OSINT Industries",
-              "aplicacao": "Plataforma especializada que automatiza a busca do telefone em centenas de serviços em tempo real, levantando avatares fotográficos, identificadores únicos (UIDs), perfis em mídias sociais e a última atividade sem alertar o titular da conta, otimizando drasticamente o tempo da investigação."
+              "aplicacao": "Plataforma especializada que automatiza a busca do telefone em centenas de serviços em tempo real, levantando avatares fotográficos, identificadores únicos (UIDs), perfis em mídias sociais e a última atividade, otimizando drasticamente o tempo da investigação."
             }
           ],
           "regra": {
@@ -286,21 +286,6 @@ registerPivot({
           },
           "excluir": [
             "Nuwber"
-          ]
-        },
-        {
-          "id": "telefone-04-c2",
-          "titulo": "Validação em Ecossistemas Centrais",
-          "conceito": "Utilização direta de páginas de autenticação oficiais para validação ativa e levantamento de metadados expostos pela plataforma.",
-          "comoFunciona": "O sistema processa requisições em tempo real na interface pública para verificar a existência de credenciais atreladas ao telefone antes de prosseguir para a etapa de inserção de senha.",
-          "utilidadeOsint": "A interface pode expor metadados valiosos em fontes abertas, como o nome real completo configurado na conta, fotos de perfil em alta resolução e confirmação de vínculos com domínios corporativos.",
-          "tools": [
-            {
-              "id": "Google Account Sign-In",
-              "aplicacao": "Ao inserir um número de telefone na interface de login ou recuperação de conta do Google, o analista confirma se o identificador possui uma conta ativa. Serve como a etapa manual perfeita para confirmar os dados extraídos pelo Epieos.",
-              "opsec": "ativo",
-              "alerta": "Tela de recuperação de senha ou de login usada para checar se um e-mail, CPF ou telefone tem conta. Pode notificar o titular, registra o IP de quem consulta e não deve ser automatizada: só manual e com base legal."
-            }
           ]
         },
         {
@@ -407,7 +392,7 @@ registerPivot({
       "camadas": [
         {
           "id": "telefone-06-c1",
-          "titulo": "Desanonimização Web3 e Ativos do Telegram",
+          "titulo": "Identificação Web3 e Ativos do Telegram",
           "conceito": "Atualmente, alvos evitam comprar chips de operadoras convencionais e optam pela aquisição de números NFT anônimos do Telegram (+888) ou usernames diretamente pela blockchain.",
           "comoFunciona": "A plataforma consulta os contratos inteligentes da rede blockchain (como a TON) para mapear o histórico de lances e revelar o endereço público da carteira digital que detém a custódia do número.",
           "utilidadeOsint": "Transpõe a barreira da rede social para a inteligência financeira (FININT). Analisando esses números, o investigador quebra a camada de anonimato inicial e liga a identidade do usuário diretamente a uma carteira de criptomoedas, possibilitando seguir o rastro do dinheiro.",
@@ -421,7 +406,7 @@ registerPivot({
         {
           "id": "telefone-06-c2",
           "titulo": "Rastreamento de Fluxos Cripto e Inteligência Financeira",
-          "conceito": "Mapeamento do fluxo de capital descentralizado a partir do endereço criptográfico (Wallet) descoberto na fase de desanonimização.",
+          "conceito": "Mapeamento do fluxo de capital descentralizado a partir do endereço criptográfico (Wallet) descoberto na fase de identificação.",
           "comoFunciona": "Exploradores de blocos e ferramentas analíticas processam os livros-razão públicos (ledgers) das blockchains para auditar o histórico de transações, saldos e conexões transacionais do endereço investigado.",
           "utilidadeOsint": "Permite desatar nós transacionais, mapear a movimentação de fundos de origem ilícita e identificar os endereços de destino ou corretoras (exchanges) que interagem com a carteira do alvo, gerando vias para possíveis bloqueios ou quebras de sigilo.",
           "tools": [

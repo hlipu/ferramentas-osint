@@ -87,7 +87,6 @@ registerPivot({
             "auto": true
           },
           "excluir": [
-            "Canal de Verificação de Canais Oficiais - Porto Seguro",
             "TorWhois",
             "FaviHash",
             "Dominico"
@@ -130,7 +129,7 @@ registerPivot({
           "id": "dominio-02-c1",
           "titulo": "Dissecação de Registros DNS",
           "conceito": "Consultas aos servidores de DNS para descobrir os apontamentos do domínio. O registro A aponta para o IP, o registro MX aponta para o servidor de e-mail e o registro TXT revela chaves de validação de serviços de terceiros.",
-          "comoFunciona": "A plataforma interroga os servidores de nomes (Name Servers) públicos para extrair tabelas de roteamento lógico sem alertar o alvo investigado.",
+          "comoFunciona": "A plataforma interroga os servidores de nomes (Name Servers) públicos para extrair tabelas de roteamento lógico sem contato direto com a infraestrutura investigada.",
           "utilidadeOsint": "Permite auditar se a empresa usa infraestruturas terceirizadas (como Google Workspace ou Microsoft 365 via MX), descobrir o verdadeiro IP do servidor e identificar chaves ocultas vinculadas ao domínio.",
           "tools": [
             {
@@ -321,7 +320,6 @@ registerPivot({
             "auto": true
           },
           "excluir": [
-            "Canal de Verificação de Canais Oficiais - Porto Seguro",
             "TorWhois",
             "FaviHash"
           ]
@@ -339,7 +337,7 @@ registerPivot({
             },
             {
               "id": "gau (getallurls)",
-              "aplicacao": "Ferramenta de linha de comando (CLI) que realiza consultas em agregadores de dados da internet (Wayback Machine, OTX, URLScan) para descobrir a superfície de exposição digital. Ao usar a flag '--subs', levanta todas as URLs atreladas aos subdomínios do alvo de maneira furtiva."
+              "aplicacao": "Ferramenta de linha de comando (CLI) que realiza consultas em agregadores de dados da internet (Wayback Machine, OTX, URLScan) para descobrir a superfície de exposição digital. Ao usar a flag '--subs', levanta todas as URLs atreladas aos subdomínios do alvo de maneira passiva."
             }
           ],
           "regra": {

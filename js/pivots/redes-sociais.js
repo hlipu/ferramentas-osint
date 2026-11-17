@@ -35,7 +35,7 @@ registerPivot({
             },
             {
               "id": "WhatsMyName",
-              "aplicacao": "A partir de um único nome de usuário conhecido, realiza uma varredura em massa automatizada para revelar a pegada digital do investigado em centenas de outros serviços, auxiliando na correlação de dados e na construção do perfil comportamental sem alertar o alvo."
+              "aplicacao": "A partir de um único nome de usuário conhecido, realiza uma varredura em massa automatizada para revelar a pegada digital do investigado em centenas de outros serviços, auxiliando na correlação de dados e na construção do perfil comportamental."
             },
             {
               "id": "InstantUsername",
@@ -115,7 +115,7 @@ registerPivot({
           "titulo": "Localização de Comunidades e Mensageria",
           "conceito": "Uso de indexadores que realizam a raspagem de links de convite públicos espalhados na internet.",
           "comoFunciona": "Motores de busca especializados e diretórios centralizados varrem repositórios abertos e metadados de chats para catalogar comunidades ativas em plataformas de mensagens.",
-          "utilidadeOsint": "Permite encontrar o ponto de encontro de grupos investigados no Telegram ou WhatsApp, viabilizando o ingresso silencioso para coleta de inteligência e mapeamento de comunidades.",
+          "utilidadeOsint": "Permite encontrar o ponto de encontro de grupos investigados no Telegram ou WhatsApp, viabilizando, com base legal, o acompanhamento para coleta de inteligência e mapeamento de comunidades.",
           "tools": [
             {
               "id": "TLG.pm Search",
@@ -174,7 +174,7 @@ registerPivot({
         "nivel": "passivo",
         "nota": "🟢 PASSIVO"
       },
-      "vetor": "Foto ou Vídeo Publicado ➔ Rosto Desanonimizado / Metadados Originais / Histórico Biométrico",
+      "vetor": "Foto ou Vídeo Publicado ➔ Rosto Identificado / Metadados Originais / Histórico Biométrico",
       "objetivo": "Auditar tudo o que o alvo publica, realizando inteligência de imagens (IMINT) para identificar rostos, extrair dados ocultos dos arquivos ou atestar a manipulação por inteligência artificial.",
       "camadas": [
         {
@@ -310,7 +310,7 @@ registerPivot({
           "titulo": "Triangulação de Sinais e Infraestrutura Wi-Fi",
           "conceito": "Pivotagem baseada na infraestrutura técnica e eletromagnética visível nas evidências (SSID/BSSID), cruzada com bancos de dados globais de roteadores.",
           "comoFunciona": "A plataforma cruza nomes de redes (SSID) ou endereços MAC de hardware (BSSID) capturados em prints, vídeos ou logs de conexão contra bilhões de observações colaborativas, convertendo o sinal em um ponto georreferenciado.",
-          "utilidadeOsint": "Possui um poder de desanonimização avassalador. Caso um print ou vídeo na rede social mostre as redes Wi-Fi locais, essas ferramentas rastreiam e informam a coordenada geográfica exata do estabelecimento, residência ou escritório frequentado pelo alvo sem depender de dados de GPS.",
+          "utilidadeOsint": "Tem alto poder de identificação de pessoas, o que exige cuidado redobrado. Caso um print ou vídeo na rede social mostre as redes Wi-Fi locais, essas ferramentas rastreiam e informam a coordenada geográfica exata do estabelecimento, residência ou escritório frequentado pelo alvo sem depender de dados de GPS.",
           "tools": [
             {
               "id": "WiGLE",
@@ -454,7 +454,7 @@ registerPivot({
           "titulo": "Isolamento de Rede e Emulação Mobile",
           "conceito": "Túneis de tráfego de rede, mascaramento de endereço IP e emuladores móveis em sistemas desktop.",
           "comoFunciona": "Softwares de rede cifram todo o tráfego da máquina do investigador e o roteiam através de servidores externos, enquanto emuladores simulam a arquitetura e os identificadores de um smartphone dentro do computador.",
-          "utilidadeOsint": "Garante que o endereço IP real e o provedor do investigador não contaminem os logs do alvo. A virtualização Android (emuladores) permite contornar bloqueios de plataformas que restringem acessos forçados pelo navegador web desktop, separando totalmente o hardware do agente da rede investigada.",
+          "utilidadeOsint": "Garante que o endereço IP real e o provedor do investigador não contaminem os logs do alvo. A virtualização Android (emuladores) permite acessar plataformas que só funcionam plenamente no celular, separando totalmente o hardware do agente da rede investigada.",
           "tools": [
             {
               "id": "Mullvad VPN",
@@ -515,7 +515,7 @@ registerPivot({
           "titulo": "Telefonia Descartável e Gestão de Contas",
           "conceito": "Utilização de números de celular virtuais (VoIP) e gerenciadores locais criptografados para superar autenticações mandatórias (2FA) e isolar contas investigativas.",
           "comoFunciona": "Serviços em nuvem ativam números de telefonia global para receber SMS em tempo real, enquanto cofres de senha locais blindam os credenciais dos avatares criados contra quebras ou espionagem.",
-          "utilidadeOsint": "Vital para o bypass da barreira de autenticação por telefone exigida hoje por quase todas as redes sociais (Telegram, X, Instagram) e para a segurança e persistência em longo prazo das lendas criadas.",
+          "utilidadeOsint": "Atende à verificação por telefone exigida hoje por quase todas as redes sociais (Telegram, X, Instagram) e para a segurança e persistência em longo prazo das lendas criadas.",
           "tools": [
             {
               "id": "SMS24.me",
@@ -544,7 +544,7 @@ registerPivot({
           "titulo": "Auditoria de Pegada Digital e OPSEC",
           "conceito": "Teste rigoroso de integridade, vazamento de DNS e singularidade das características de rede e software (Browser Fingerprinting) da máquina do analista.",
           "comoFunciona": "Plataformas avaliam como as bibliotecas, plugins, fontes, canvas e cabeçalhos do navegador do investigador aparecem para os sites alvo, mapeando o grau de singularidade técnica antes da infiltração.",
-          "utilidadeOsint": "Funciona como um checklist de checagem pré-voo. Garante que os túneis de rede estejam funcionais (sem vazar o IP real) e que as configurações da persona permitam fundir o tráfego do analista com o da massa de usuários padrão, derrotando detecções.",
+          "utilidadeOsint": "Funciona como um checklist de checagem pré-voo. Garante que os túneis de rede estejam funcionais (sem vazar o IP real) e que as configurações da persona não destoem do tráfego de usuários comuns, preservando a segurança do analista.",
           "tools": [
             {
               "id": "BrowserLeaks",

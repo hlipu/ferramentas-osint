@@ -8,7 +8,7 @@ registerPivot({
   "tipo": "alvo",
   "icone": "🆔",
   "titulo": "Investigação de Nomes de Usuário (Username / Handle)",
-  "subtitulo": "// Roteiro metodológico para enumeração em massa, rastreamento social, dorking, análise em vazamentos e desanonimização Web3.",
+  "subtitulo": "// Roteiro metodológico para enumeração em massa, rastreamento social, dorking, análise em vazamentos e identificação em Web3.",
   "imagem": "../img/trilha-username.jpg",
   "modulos": [
     {
@@ -81,7 +81,7 @@ registerPivot({
           "titulo": "Inteligência Integrada e Pivoting Avançado",
           "conceito": "Plataformas multifuncionais que automatizam fluxos de investigação cruzando identificadores iniciais (usernames) com centenas de fontes de terceiros.",
           "comoFunciona": "O analista insere o nome de usuário como ponto de entrada em um hub de agregação, que dispara requisições para mapear conexões, extrair relatórios e descobrir ramificações ocultas da identidade.",
-          "utilidadeOsint": "Reduz drasticamente o tempo de coleta manual e enriquece a árvore de conexões do alvo, permitindo o avanço rápido para a desanonimização completa de identidades dissimuladas.",
+          "utilidadeOsint": "Reduz drasticamente o tempo de coleta manual e enriquece a árvore de conexões do alvo, permitindo avançar mais rápido na identificação de perfis com nomes falsos ou ocultos.",
           "tools": [
             {
               "id": "Sherlockeye",
@@ -104,10 +104,10 @@ registerPivot({
       "camadas": [
         {
           "id": "username-02-c1",
-          "titulo": "Desanonimização e Extração de Metadados",
+          "titulo": "Identificação e Extração de Metadados",
           "conceito": "Raspagem de dados abertos do perfil, como biografias, fotografias e a correlação do username com outras plataformas para desmascarar a identidade real.",
           "comoFunciona": "Plataformas automatizadas realizam buscas em tempo real em centenas de serviços da web para extrair identificadores exclusivos, fotos e nomes reais associados à conta investigada.",
-          "utilidadeOsint": "Acelera a desanonimização do alvo. Permite pivotar rapidamente a partir de um username para dezenas de plataformas digitais, revelando a extensão real da presença online do investigado e extraindo metadados estruturados das contas localizadas.",
+          "utilidadeOsint": "Acelera a identificação do titular. Permite pivotar rapidamente a partir de um username para dezenas de plataformas digitais, revelando a extensão real da presença online do investigado e extraindo metadados estruturados das contas localizadas.",
           "tools": [
             {
               "id": "Sherlockeye",
@@ -434,7 +434,7 @@ registerPivot({
       "camadas": [
         {
           "id": "username-06-c1",
-          "titulo": "Desanonimização Financeira Descentralizada",
+          "titulo": "Identificação Financeira Descentralizada",
           "conceito": "Varredura em plataformas de identidade Web3 (Smart Contracts) que conectam strings de nomes a hashes (endereços) de criptoativos.",
           "comoFunciona": "A plataforma interroga os contratos inteligentes de blockchains específicas para revelar qual endereço público de carteira digital detém a custódia e o controle de um determinado nome de usuário ou domínio descentralizado.",
           "utilidadeOsint": "A ponte definitiva entre o perfil comportamental e o fluxo de caixa (FININT). Permite saber qual carteira de criptomoedas recebe pagamentos ou administra a atividade financeira daquele pseudônimo de forma incontestável.",
@@ -476,7 +476,6 @@ registerPivot({
             "HNSSearch",
             "hns.to",
             "HDNS (Handshake DNS)",
-            "Canal de Verificação de Canais Oficiais - Porto Seguro",
             "TorWhois",
             "FaviHash"
           ]
@@ -484,7 +483,7 @@ registerPivot({
         {
           "id": "username-06-c3",
           "titulo": "Inteligência Financeira e Rastreamento Cripto (FININT)",
-          "conceito": "Mapeamento do fluxo de capital descentralizado a partir do endereço criptográfico (Wallet) descoberto na fase de desanonimização do username.",
+          "conceito": "Mapeamento do fluxo de capital descentralizado a partir do endereço criptográfico (Wallet) descoberto na fase de identificação do username.",
           "comoFunciona": "Exploradores de blocos processam os livros-razão públicos (ledgers) das blockchains para auditar o histórico de transações, saldos e conexões transacionais vinculados ao endereço investigado.",
           "utilidadeOsint": "Após quebrar o vínculo do username para a carteira, esta fase mapeia a movimentação de fundos de origem ilícita e identifica as corretoras (exchanges) ou carteiras de destino que interagem com o alvo, viabilizando o 'Follow the Money'.",
           "tools": [

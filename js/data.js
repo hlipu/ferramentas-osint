@@ -57,8 +57,8 @@ const TOOLS = [
     "title": "5Sim",
     "url": "https://5sim.net/",
     "tipo": "Plataforma Web de Telefonia Virtual (SMS Activation Service)",
-    "utilidade": "Recebimento de SMS online utilizando números de telefone virtuais temporários para ativação de contas e bypass de autenticação de dois fatores (2FA).",
-    "descricao": "O 5Sim é um serviço online de ativação de SMS que disponibiliza números de telefone virtuais temporários de diversos países e operadoras de telefonia ao redor do mundo. A plataforma permite contornar a necessidade de utilização de um chip SIM físico pessoal para realizar a validação e verificação de contas em plataformas de redes sociais, e-mails, aplicativos de mensageria corporativa e outros serviços web que exigem um número telefônico ativo no momento do cadastro ou login.",
+    "utilidade": "Recebimento de SMS online utilizando números de telefone virtuais temporários para ativação de contas que exigem confirmação por telefone.",
+    "descricao": "O 5Sim é um serviço online de ativação de SMS que disponibiliza números de telefone virtuais temporários de diversos países e operadoras de telefonia ao redor do mundo. A plataforma dispensa o uso de um chip SIM físico pessoal para realizar a validação e verificação de contas em plataformas de redes sociais, e-mails, aplicativos de mensageria corporativa e outros serviços web que exigem um número telefônico ativo no momento do cadastro ou login.",
     "testada": true,
     "tags": [
       "plataforma/web",
@@ -257,7 +257,7 @@ const TOOLS = [
       "opsec/ambiente-seguro"
     ],
     "utilidade_Osint": "No contexto de investigações em fontes abertas e inteligência cibernética, o Android Studio é utilizado para analisar a estrutura interna de aplicativos móveis e para configurar ambientes virtuais de testes onde contas de cobertura (*sock puppets*) e ferramentas de coleta mobile podem ser executadas de forma isolada e segura.",
-    "notes": "* Excelente para interceptar e analisar o tráfego de dados de aplicativos de mensageria ou redes sociais em ambiente controlado, quando combinado com ferramentas de proxy (como Burp Suite ou OWASP ZAP).\n* Permite simular diferentes coordenadas de GPS, operadoras de telefonia e níveis de bateria diretamente no emulador, o que é ideal para contornar defesas baseadas em telemetria de aplicativos sob investigação."
+    "notes": "* Excelente para interceptar e analisar o tráfego de dados de aplicativos de mensageria ou redes sociais em ambiente controlado, quando combinado com ferramentas de proxy (como Burp Suite ou OWASP ZAP).\n* Permite simular diferentes coordenadas de GPS, operadoras de telefonia e níveis de bateria diretamente no emulador, o que permite observar como aplicativos sob análise se comportam em diferentes cenários."
   },
   {
     "id": "ANY.RUN",
@@ -379,7 +379,7 @@ const TOOLS = [
       "acesso/gratuito",
       "opsec/ambiente-seguro"
     ],
-    "utilidade_Osint": "Diferente de um navegador comum, ele é útil para criar uma camada isolada de navegação:\n- **Modo Banco:** Útil para isolar sessões de navegação e evitar que outros processos do PC acessem os dados da aba.\n- **Anti-Fingerprinting:** Tenta enganar sites que tentam identificar o hardware e software do investigador.\n- **Central de Segurança:** Facilita o controle de extensões e permissões de câmera/microfone em um só lugar.",
+    "utilidade_Osint": "Diferente de um navegador comum, ele é útil para criar uma camada isolada de navegação:\n- **Modo Banco:** Útil para isolar sessões de navegação e evitar que outros processos do PC acessem os dados da aba.\n- **Anti-Fingerprinting:** Reduz a identificação do hardware e do software do investigador pelos sites visitados.\n- **Central de Segurança:** Facilita o controle de extensões e permissões de câmera/microfone em um só lugar.",
     "notes": "- **Ponto de Atenção:** Como é baseado em Chromium, a interface é familiar para quem usa Chrome, facilitando a migração de extensões de OSINT.\n- **Dica:** Ótima alternativa para quando um site não carrega corretamente no Tor, mas você ainda precisa de uma camada extra de proteção contra rastreio comercial.\n- **VS Brave:** O Avast foca mais em integração com o antivírus; o Brave em bloqueio de anúncios nativo.\n- **VS Tor:** O Avast **não** anonimiza sua conexão (não oculta seu IP sozinho), ele apenas protege a sua máquina e o seu rastro local/do browser.\n\n[[MOC-Navegadores-OSINT]] | [[Checklist-Configuração-Ambiente]]"
   },
   {
@@ -937,27 +937,6 @@ const TOOLS = [
     "lastVerified": "2026-11-12"
   },
   {
-    "id": "Canal de Verificação de Canais Oficiais - Porto Seguro",
-    "title": "Canal de Verificação de Canais Oficiais - Porto Seguro",
-    "url": "https://www.portoseguro.com.br/pdc/recuperacao/canais",
-    "tipo": "Canal de Verificação Institucional",
-    "utilidade": "Validação e identificação de domínios corporativos e detecção de canais de atendimento oficiais para mitigação de fraudes",
-    "descricao": "A página de validação de canais da Porto Seguro é uma ferramenta institucional pública desenvolvida para permitir que clientes e investigadores verifiquem se um determinado número de telefone, link, e-mail ou domínio que se apresenta em nome da empresa é de fato um canal de atendimento oficial e autorizado ou se trata de uma tentativa de fraude (phishing, spoofing ou engenharia social).",
-    "testada": true,
-    "tags": [
-      "alvo/empresa",
-      "alvo/dominio",
-      "fonte/registros-publicos-gov",
-      "func/validacao-status",
-      "plataforma/web",
-      "acesso/gratuito"
-    ],
-    "utilidade_Osint": "No contexto de investigações de fraudes digitais, engenharia social e análise de ameaças cibernéticas (Cyber Threat Intelligence), esta ferramenta atua como um valioso validador de infraestrutura e identidade corporativa. Ela permite ao analista confirmar a autenticidade de elementos de contato atribuídos à Porto Seguro, auxiliando no descarte ou confirmação de vetores de ataque que simulam a identidade da marca.",
-    "notes": "* Útil para rotinas de resposta a incidentes e inteligência de ameaças, agilizando a triagem de denúncias de páginas falsas.\n* Sendo uma ferramenta de consulta pontual e reativa baseada em interface web, sua automação massiva via scripts depende de requisições diretas aos endpoints de validação da página.\n* **Verificação (2026-11-03)**: A URL agora cai no login Porto ID (fluxo de recuperação/autenticação), que não corresponde à descrição. Não testado: fora do escopo de testes em telas de recuperação.",
-    "lastVerified": "2026-11-03",
-    "status": "limited"
-  },
-  {
     "id": "Canarytokens",
     "title": "Canarytokens",
     "url": "https://canarytokens.org/",
@@ -1513,7 +1492,7 @@ const TOOLS = [
       "acesso/gratuito"
     ],
     "utilidade_Osint": "No âmbito de Background Checks, investigações de fraudes na área da saúde, due diligence corporativa e localização de alvos, esta ferramenta atua como um indexador de credenciais profissionais. Ela permite validar a real identidade e a legitimidade de indivíduos que se autodeclaram profissionais da saúde, rastrear o estado (UF) de atuação principal de um alvo e identificar vínculos societários ou responsabilidade técnica de pessoas físicas em empresas do setor odontológico.",
-    "notes": "* A busca permite a utilização de filtros fonéticos ou parciais para nomes, o que facilita a identificação do alvo mesmo quando não se dispõe da grafia exata ou do número do documento de identidade.\n* Os resultados costumam indicar a especialidade do profissional (ex: Ortodontia, Implantodontia), o que enriquece o perfilamento comportamental e comercial do investigado.\n* Por implementar rotinas de proteção contra consultas massivas automatizadas (como desafios de CAPTCHA), a extração de dados em larga escala exige técnicas avançadas de bypass ou emulação humana, sendo ideal para consultas pontuais e cirúrgicas.\n* **Verificação (2026-11-08)**: A consulta está agora em busca-profissionais.cfo.org.br, com reCAPTCHA. Resultado não confirmado no teste.",
+    "notes": "* A busca permite a utilização de filtros fonéticos ou parciais para nomes, o que facilita a identificação do alvo mesmo quando não se dispõe da grafia exata ou do número do documento de identidade.\n* Os resultados costumam indicar a especialidade do profissional (ex: Ortodontia, Implantodontia), o que enriquece o perfilamento comportamental e comercial do investigado.\n* Por implementar rotinas de proteção contra consultas massivas automatizadas (como desafios de CAPTCHA), a ferramenta é indicada para consultas pontuais, e não para extração em larga escala.\n* **Verificação (2026-11-08)**: A consulta está agora em busca-profissionais.cfo.org.br, com reCAPTCHA. Resultado não confirmado no teste.",
     "lastVerified": "2026-11-08"
   },
   {
@@ -1629,7 +1608,7 @@ const TOOLS = [
       "acesso/gratuito"
     ],
     "utilidade_Osint": "No contexto de investigações digitais, cibercrime e inteligência de alvos, a identificação precisa da operadora de telefonia é um passo crucial de *footprinting* e preparação. A ferramenta mitiga erros de atribuição técnica, permitindo ao analista discernir se o número investigado é um terminal fixo ou móvel, determinar a operadora de origem e a operadora atual (útil para direcionar ordens judiciais de quebra de sigilo ou pedidos de dados cadastrais) e monitorar se o alvo trocou de rede prestadora de serviço, o que pode indicar tentativas de evasão ou descarte de linhas.",
-    "notes": "* A consulta exige a digitação do número com o código de área (DDD) sem formatação complexa (apenas números) e exige a resolução manual de um mecanismo de segurança visual (CAPTCHA / reCAPTCHA) para exibir o resultado.\n* A resposta fornecida traz dados limpos: a Razão Social ou Nome Fantasia da Operadora (ex: Telefônica Brasil/Vivo, Claro, TIM) e o tipo de serviço (SMP para móvel, STFC para fixo), servindo como uma excelente camada de validação antes da execução de requisições HLR (Home Location Register) ativas.\n* Devido à barreira do CAPTCHA, a automação para raspagem massiva de dados (Scraping) exige o emprego de resolvedores de imagem automatizados (solvers), sendo mais indicada para validações cirúrgicas ao longo do ciclo de inteligência.\n* **Verificação (2026-10-26)**: Fonte oficial da portabilidade: devolve a operadora atual (e o histórico recente, na outra aba). Exige reCAPTCHA de caixa **e** clique humano em cada consulta (o envio simulado não passa). Número inexistente → \"Não existem dados retornados\". Referência para validar as outras ferramentas de operadora.",
+    "notes": "* A consulta exige a digitação do número com o código de área (DDD) sem formatação complexa (apenas números) e exige a resolução manual de um mecanismo de segurança visual (CAPTCHA / reCAPTCHA) para exibir o resultado.\n* A resposta fornecida traz dados limpos: a Razão Social ou Nome Fantasia da Operadora (ex: Telefônica Brasil/Vivo, Claro, TIM) e o tipo de serviço (SMP para móvel, STFC para fixo), servindo como uma excelente camada de validação antes da execução de requisições HLR (Home Location Register) ativas.\n* Devido à barreira do CAPTCHA, a consulta é manual e indicada para validações pontuais ao longo do ciclo de inteligência.\n* **Verificação (2026-10-26)**: Fonte oficial da portabilidade: devolve a operadora atual (e o histórico recente, na outra aba). Exige reCAPTCHA de caixa **e** clique humano em cada consulta (o envio simulado não passa). Número inexistente → \"Não existem dados retornados\". Referência para validar as outras ferramentas de operadora.",
     "lastVerified": "2026-10-26"
   },
   {
@@ -1964,7 +1943,7 @@ const TOOLS = [
       "opsec/personas"
     ],
     "utilidade_Osint": "No âmbito das investigações em fontes abertas, a plataforma atua diretamente na fase de preparação operacional e manutenção da OPSEC (Segurança das Operações). Ela fornece os subsídios necessários para a montagem de identidades sintéticas coerentes, permitindo que o analista estruture cadastros e contas de cobertura sem a necessidade de expor informações reais ou comprometer a integridade da investigação.",
-    "notes": "* Ideal para contornar telas de captura de dados ou validações iniciais de formato de formulários em plataformas onde o analista precisa navegar anonimamente.\n* Para a construção de uma persona digital robusta, os dados textuais gerados por esta ferramenta devem ser combinados com ferramentas de e-mail temporário e geradores de rostos por inteligência artificial (IA).\n* **Verificação (2026-11-12)**: Identity Generator: nomes, endereços, telefones e e-mails falsos. Página carregada de anúncios que recarregam (leitura automatizada falha). Não usar dado gerado que coincida com pessoa real.",
+    "notes": "* Útil para preencher formulários de teste ou cadastros de persona sem expor dados reais do analista.\n* Para a construção de uma persona digital robusta, os dados textuais gerados por esta ferramenta devem ser combinados com ferramentas de e-mail temporário e geradores de rostos por inteligência artificial (IA).\n* **Verificação (2026-11-12)**: Identity Generator: nomes, endereços, telefones e e-mails falsos. Página carregada de anúncios que recarregam (leitura automatizada falha). Não usar dado gerado que coincida com pessoa real.",
     "lastVerified": "2026-11-12"
   },
   {
@@ -3058,7 +3037,7 @@ const TOOLS = [
       "plataforma/terminal",
       "acesso/gratuito"
     ],
-    "utilidade_Osint": "No escopo de investigações em fontes abertas, inteligência cibernética e reconhecimento técnico, o `gau` atua como uma solução eficiente para descobrir superfícies de exposição digital, endpoints legados, caminhos de API e arquivos indexados no passado (como PDFs, planilhas, arquivos de configuração ou backups). Como interage estritamente com repositórios e caches de terceiros, a ferramenta viabiliza o mapeamento lógico e estrutural de um site de maneira totalmente passiva e furtiva, sem gerar tráfego direto ou registros de conexões nos logs do servidor do alvo.",
+    "utilidade_Osint": "No escopo de investigações em fontes abertas, inteligência cibernética e reconhecimento técnico, o `gau` atua como uma solução eficiente para descobrir superfícies de exposição digital, endpoints legados, caminhos de API e arquivos indexados no passado (como PDFs, planilhas, arquivos de configuração ou backups). Como interage estritamente com repositórios e caches de terceiros, a ferramenta viabiliza o mapeamento lógico e estrutural de um site de maneira totalmente passiva, sem gerar tráfego direto ou registros de conexões nos logs do servidor do alvo.",
     "notes": "* O comando básico `gau exemplo.com` extrai as URLs associadas ao domínio exato. Para expandir o escopo da investigação e incluir subdomínios mapeados nos repositórios, deve-se adicionar a flag `--subs` (ex: `gau --subs exemplo.com`).\n* Para otimizar a triagem de dados, a saída massiva do comando pode ser filtrada localmente com utilitários de texto para isolar arquivos sensíveis ou extensões críticas (ex: `gau exemplo.com | grep -E \"\\.env|\\.git|\\.conf|\\.db\"`).\n* Como os dados extraídos refletem registros históricos acumulados ao longo dos anos, muitas das URLs fornecidas podem não estar mais ativas nos servidores do alvo. Para validar o status atualizado de cada link em tempo real, recomenda-se direcionar a lista gerada para ferramentas de validação de requisições HTTP."
   },
   {
@@ -3357,24 +3336,6 @@ const TOOLS = [
     "lastVerified": "2026-11-12"
   },
   {
-    "id": "Google Account Sign-In",
-    "title": "Google Account Sign-In",
-    "url": "https://accounts.google.com/v3/signin",
-    "tipo": "Plataforma de Validação e Verificação de Identidades",
-    "utilidade": "Validação ativa de identificadores digitais (e-mails e telefones) e enumeração de contas no ecossistema Google.",
-    "descricao": "O Google Account Sign-In é o portal oficial e centralizado de autenticação para todos os serviços do ecossistema Google (como Gmail, YouTube, Google Drive e Google Workspace). Sob a perspectiva técnica de segurança e análise de dados, a interface processa requisições em tempo real para verificar a existência de credenciais de usuários em sua base de dados antes de prosseguir para a etapa de inserção de senha.",
-    "testada": false,
-    "tags": [
-      "alvo/usuario-email",
-      "alvo/telefone",
-      "func/validacao-status",
-      "plataforma/web",
-      "acesso/gratuito"
-    ],
-    "utilidade_Osint": "Em investigações de fontes abertas, a página de login do Google é amplamente explorada como uma ferramenta de pivotagem e validação passiva/ativa de alvos. Ao inserir um e-mail suspeito ou um número de telefone na interface de login (ou no fluxo de recuperação de conta), o analista pode confirmar se o identificador possui uma conta Google ativa. Além disso, a depender das configurações de privacidade do alvo e do fluxo utilizado, a interface pode expor metadados valiosos em fontes abertas, como o nome real completo configurado na conta, fotos de perfil (avatares) e a confirmação de vínculos com domínios corporativos personalizados (Google Workspace).",
-    "notes": "* O uso repetitivo ou automatizado a partir de um mesmo endereço IP pode acionar mecanismos de defesa da Google, resultando em desafios de CAPTCHA ou bloqueios temporários de requisições. \n* Recomenda-se realizar este procedimento a partir de um ambiente seguro (máquina virtual) e utilizando conexões isoladas para evitar o cruzamento de telemetria ou a associação do IP do investigador à conta do alvo.\n* **Alerta (2026-11-13)**: Tela de recuperação de senha ou de login usada para checar se um e-mail, CPF ou telefone tem conta. Pode notificar o titular, registra o IP de quem consulta e não deve ser automatizada: só manual e com base legal."
-  },
-  {
     "id": "Google Admin Toolbox - Messageheader",
     "title": "Google Admin Toolbox - Messageheader",
     "url": "https://toolbox.googleapps.com/apps/messageheader/",
@@ -3500,7 +3461,7 @@ const TOOLS = [
       "plataforma/web",
       "acesso/gratuito"
     ],
-    "utilidade_Osint": "No âmbito do Open Source Intelligence (OSINT), este guia atua como um manual prático para a fase de reconhecimento passivo (*passive footprinting*). Ele ensina o analista a estruturar comandos de busca de alta precisão para auditar o perímetro digital de uma organização e identificar potenciais vazamentos de dados ou brechas de segurança cibernética sem disparar alertas nos sistemas de detecção do alvo, visto que toda a interação ocorre de forma intermediada contra os servidores de indexação do próprio Google.",
+    "utilidade_Osint": "No âmbito do Open Source Intelligence (OSINT), este guia atua como um manual prático para a fase de reconhecimento passivo (*passive footprinting*). Ele ensina o analista a estruturar comandos de busca de alta precisão para auditar o perímetro digital de uma organização e identificar dados ou configurações expostos publicamente por engano, consultando apenas o que já está indexado no Google.",
     "notes": "* As strings de dorks apresentadas são conceituais e devem ser customizadas pelo investigador por meio da adição de operadores restritivos (como `site:dominio-alvo.com`) para delimitar a busca estritamente ao escopo da investigação em andamento.\n* A inserção consecutiva e automatizada de strings complexas com operadores avançados na interface do Google gera anomalias de tráfego que frequentemente resultam na exigência de CAPTCHAs ou no bloqueio temporário do endereço IP utilizado, recomendando-se moderação ou o emprego de técnicas de anonimização de tráfego de rede para preservar a fluidez e a OPSEC do analista.\n* **Verificação (2026-11-12)**: Questionário/teste didático sobre operadores do Google. Referência de estudo, não ferramenta.",
     "lastVerified": "2026-11-12"
   },
@@ -3854,7 +3815,7 @@ const TOOLS = [
       "plataforma/web",
       "acesso/gratuito"
     ],
-    "utilidade_Osint": "Indispensável para a fase de reconhecimento passivo e mapeamento da pegada digital (digital footprinting). Ao inserir um e-mail ou número de telefone do alvo, o analista mapeia em quais plataformas, fóruns ou serviços web aquela identidade possui ou possuiu cadastro, fornecendo novos leads de redes sociais e nichos digitais sem alertar o investigado.",
+    "utilidade_Osint": "Indispensável para a fase de reconhecimento passivo e mapeamento da pegada digital (digital footprinting). Ao inserir um e-mail ou número de telefone do alvo, o analista mapeia em quais plataformas, fóruns ou serviços web aquela identidade possui ou possuiu cadastro, fornecendo novos leads de redes sociais e nichos digitais sem contato direto com a pessoa investigada.",
     "notes": "* **Segurança e OPSEC**: O site utiliza o modelo de *K-Anonymity* para consultas de senhas (pwned passwords) e não armazena logs das pesquisas de e-mail, garantindo que a consulta efetuada pelo investigador não gere novos vazamentos ou alerte o alvo.\n* **Limitações de Automação**: Embora a pesquisa manual na página web seja gratuita, requisições automatizadas em larga escala por meio de scripts ou ferramentas integradas de terceiros requerem o uso de uma chave de API comercial paga.\n* **Verificação (2026-10-25)**: A busca no site é gratuita, mas protegida por Cloudflare Turnstile. A API v3 (`/breachedaccount/{email}`) exige chave **paga**; só a Pwned Passwords é aberta.\n* **Verificação (2026-10-26)**: Funciona sem login (Turnstile invisível passou). Primeira checagem de vazamento por e-mail: lista só o nome das bases, sem dados.",
     "lastVerified": "2026-10-26"
   },
@@ -3991,8 +3952,8 @@ const TOOLS = [
       "plataforma/terminal",
       "acesso/gratuito"
     ],
-    "utilidade_Osint": "Crucial para a fase de validação ativa e mapeamento de pegada digital. A ferramenta permite determinar com precisão em quais plataformas e redes sociais um endereço de e-mail específico possui cadastro ativo, utilizando endpoints de autenticação de forma silenciosa e passiva para o alvo, gerando novos caminhos de investigação (pivoting).",
-    "notes": "* Devido à natureza das consultas, que envolvem o envio rápido de requisições sequenciais para múltiplos servidores web externos, o uso do Holehe a partir de um único IP de origem pode resultar em bloqueios temporários (*rate limiting*) ou no acionamento de mecanismos anti-bot (CAPTCHAs). O emprego de proxies ou VPNs rotativas é frequentemente adotado para contornar essa limitação técnica.\n* Como os sites alteram periodicamente a lógica de suas páginas de login e recuperação de senha, módulos individuais da ferramenta podem parar de funcionar temporariamente até que novas atualizações de código sejam lançadas no repositório oficial.\n* **Verificação (2026-10-25)**: Repositório sem commits desde ~09/2024: os módulos de verificação de sites tendem a quebrar. Funciona consultando páginas de cadastro/recuperação, que podem alertar o titular.",
+    "utilidade_Osint": "Crucial para a fase de validação ativa e mapeamento de pegada digital. A ferramenta permite determinar com precisão em quais plataformas e redes sociais um endereço de e-mail específico possui cadastro ativo, consultando as respostas das páginas de cadastro e autenticação, sem contato direto com a pessoa investigada, gerando novos caminhos de investigação (pivoting).",
+    "notes": "* Devido à natureza das consultas, que envolvem o envio rápido de requisições sequenciais para múltiplos servidores web externos, o uso do Holehe a partir de um único IP de origem pode resultar em bloqueios temporários (*rate limiting*) ou no acionamento de mecanismos anti-bot (CAPTCHAs). Nesse caso, o recomendado é espaçar as consultas e respeitar os limites de cada serviço.\n* Como os sites alteram periodicamente a lógica de suas páginas de login e recuperação de senha, módulos individuais da ferramenta podem parar de funcionar temporariamente até que novas atualizações de código sejam lançadas no repositório oficial.\n* **Verificação (2026-10-25)**: Repositório sem commits desde ~09/2024: os módulos de verificação de sites tendem a quebrar. Funciona consultando páginas de cadastro/recuperação, que podem alertar o titular.",
     "lastVerified": "2026-10-25"
   },
   {
@@ -4103,7 +4064,7 @@ const TOOLS = [
       "acesso/limitado",
       "opsec/personas"
     ],
-    "utilidade_Osint": "No contexto de investigações cibernéticas em fontes abertas, especialmente em vertentes como SOCMINT (Inteligência em Redes Sociais) e HUMINT (Inteligência baseada em Fontes Humanas), o Hushed atua de maneira estratégica na fase de preparação e proteção operacional (OPSEC). A ferramenta resolve o desafio recorrente de contornar a exigência de verificação em duas etapas (2FA) e autenticação obrigatória via SMS por parte de grandes plataformas digitais, permitindo ao analista estruturar e maturar *Sock Puppets* (personas de investigação) de forma segura, sem comprometer dados telefônicos institucionais ou pessoais.",
+    "utilidade_Osint": "No contexto de investigações cibernéticas em fontes abertas, especialmente em vertentes como SOCMINT (Inteligência em Redes Sociais) e HUMINT (Inteligência baseada em Fontes Humanas), o Hushed atua de maneira estratégica na fase de preparação e proteção operacional (OPSEC). A ferramenta fornece um número próprio para a verificação por SMS exigida por grandes plataformas digitais, permitindo ao analista estruturar e maturar *Sock Puppets* (personas de investigação) de forma segura, sem comprometer dados telefônicos institucionais ou pessoais.",
     "notes": "* Números de teste e planos curtos expiram e podem ser reatribuídos; renove ou migre a conta da persona antes do vencimento.\n* Algumas plataformas bloqueiam números VoIP na verificação; teste a aceitação antes de depender do número para uma persona."
   },
   {
@@ -4240,7 +4201,7 @@ const TOOLS = [
       "acesso/gratuito"
     ],
     "utilidade_Osint": "No âmbito da inteligência de fontes abertas, o Identificator.space serve como um recurso ágil para a condução de técnicas de *pivoting* de identidade e enriquecimento de alvos. A partir de um e-mail inicial, o investigador consegue traçar a pegada digital completa do alvo, descobrindo sua presença em redes sociais, fóruns e outros ecossistemas digitais. Isso permite correlacionar diferentes identidades virtuais e direcionar investigações mais profundas para as plataformas específicas onde o alvo foi localizado.",
-    "notes": "* A varredura ocorre de maneira passiva em relação ao alvo (sem alertar ou notificar a caixa de entrada investigada), permitindo que o levantamento preserve o anonimato da investigação técnica.\n* Para garantir uma coleta exaustiva e reduzir potenciais taxas de falsos negativos ou respostas desatualizadas, é recomendável complementar e validar os achados gerados pela plataforma com ferramentas similares locais (como o script *holehe*) ou plataformas pagas especializadas.\n* **Verificação (2026-10-26)**: Bloqueio Cloudflare (\"Sorry, you have been blocked\") já na home, em Chrome real com IP residencial do Brasil. Pode ser bloqueio por país/ASN: testar com VPN de outro país antes de descontinuar.",
+    "notes": "* A varredura é passiva: não envia mensagens à caixa de entrada consultada.\n* Para garantir uma coleta exaustiva e reduzir potenciais taxas de falsos negativos ou respostas desatualizadas, é recomendável complementar e validar os achados gerados pela plataforma com ferramentas similares locais (como o script *holehe*) ou plataformas pagas especializadas.\n* **Verificação (2026-10-26)**: Bloqueio Cloudflare (\"Sorry, you have been blocked\") já na home, em Chrome real com IP residencial do Brasil. Pode ser bloqueio por país/ASN: testar com VPN de outro país antes de descontinuar.",
     "status": "limited",
     "lastVerified": "2026-10-26"
   },
@@ -5585,7 +5546,7 @@ const TOOLS = [
     "url": "https://onlinesim.io/",
     "tipo": "Provedor de Serviços de Telecomunicação Virtual (VoIP / SMS Virtual)",
     "utilidade": "Fornecimento de números de telefone virtuais temporários e descartáveis para recebimento de SMS e autenticação de contas de cobertura.",
-    "descricao": "O OnlineSIM é um serviço focado no fornecimento de números de telefone virtuais temporários (VoIP) e chips virtuais de diversos países. A ferramenta permite a recepção de mensagens de texto (SMS) de forma automatizada através de sua interface web ou API, servindo primordialmente para contornar mecanismos de autenticação de dois fatores (2FA) e validação de registros em serviços digitais.",
+    "descricao": "O OnlineSIM é um serviço focado no fornecimento de números de telefone virtuais temporários (VoIP) e chips virtuais de diversos países. A ferramenta permite a recepção de mensagens de texto (SMS) de forma automatizada através de sua interface web ou API, servindo principalmente para confirmar cadastros em serviços digitais que exigem um número de telefone.",
     "testada": true,
     "tags": [
       "plataforma/web",
@@ -5854,26 +5815,6 @@ const TOOLS = [
     "utilidade_Osint": "No contexto investigativo, a plataforma funciona como um motor de busca passiva e inteligência de ameaças essencial para rastrear a exposição digital de alvos, realizar correlação de credenciais e mapear superfícies de ataque.",
     "notes": "* Ideal para equipes de Red Team, analistas de Cyber Threat Intelligence (CTI) e investigadores de fraudes na identificação rápida de reutilização de senhas por alvos.\n* Apresenta filtros sofisticados de busca, permitindo refinar resultados por intervalos de anos e países específicos para mitigar falsos positivos em investigações complexas.\n* **Verificação (2026-10-26)**: Sem login mostra só estatísticas (Altcha automático). Com conta Free mostrou o registro completo de um vazamento brasileiro (promobit.com.br) que HIBP, SynScan, DeHashed e BreachBase **não** tinham — melhor cobertura de bases BR.\n* **Verificação (2026-10-28)**: Por username: a prévia sem login mostra contagem de DB leaks/stealer logs; com conta Free mostra o registro (ex.: base twitter-2.1b com nome, username e data de criação da conta), com campos extras censurados. Buscar por username e por e-mail se complementa — retornaram vazamentos diferentes. UserHunter (username em 1.000+ sites) exige plano Platinum.",
     "lastVerified": "2026-10-28"
-  },
-  {
-    "id": "PagSeguro (Tela de Acesso / Recuperação)",
-    "title": "PagSeguro (Tela de Acesso / Recuperação)",
-    "url": "https://acesso.pagseguro.uol.com.br/",
-    "tipo": "Portal de Autenticação / Plataforma de Serviços Financeiros",
-    "utilidade": "Validação de e-mails, números de telefone e identidades através do mecanismo de recuperação de contas (pivoting).",
-    "descricao": "A URL corresponde à interface de login e recuperação de credenciais do PagSeguro (PagBank), uma das principais plataformas de serviços financeiros e meios de pagamento do Brasil. No contexto de segurança e investigações, sua área pública de redefinição de senha permite submeter dados cadastrais para verificar vínculos de contas.",
-    "testada": false,
-    "tags": [
-      "alvo/pessoa-identidade",
-      "alvo/usuario-email",
-      "alvo/telefone",
-      "fonte/registros-publicos-gov",
-      "func/validacao-status",
-      "plataforma/web",
-      "acesso/gratuito"
-    ],
-    "utilidade_Osint": "Em investigações baseadas em fontes abertas, a página é utilizada como um vetor de validação ativa e *pivoting*. Ao inserir um dado conhecido na área de recuperação de conta, o investigador pode constatar a existência da conta ou obter fragmentos de informações protegidas.",
-    "notes": "- **Ponto de Atenção:** Conforme materiais de apoio, este método específico não alerta o alvo sobre a tentativa de recuperação em etapas iniciais de visualização, mas o uso excessivo pode gerar bloqueios de IP (WAF).\n- **Dica:** Utilize para validar se um CPF obtido em vazamentos ou fontes governamentais ainda é utilizado pelo alvo em serviços de varejo.\n* **Alerta (2026-11-13)**: Tela de recuperação de senha ou de login usada para checar se um e-mail, CPF ou telefone tem conta. Pode notificar o titular, registra o IP de quem consulta e não deve ser automatizada: só manual e com base legal."
   },
   {
     "id": "Painel de Consultas Públicas - IBAMA",
@@ -6803,92 +6744,6 @@ const TOOLS = [
     "lastVerified": "2026-11-03"
   },
   {
-    "id": "Reclame Aqui (Recuperação de Senha)",
-    "title": "Reclame Aqui (Recuperação de Senha)",
-    "url": "https://www.reclameaqui.com.br/esqueci-minha-senha/",
-    "tipo": "Validador de Identidade Digital / Plataforma Comercial",
-    "utilidade": "Validação da existência e do status de contas associadas a e-mails ou CPFs via mecanismo de recuperação de credenciais",
-    "descricao": "A página de recuperação de credenciais do Reclame Aqui é o canal oficial destinado a usuários (consumidores) que esqueceram suas senhas de acesso à plataforma de reclamações e resolução de conflitos de consumo. O sistema permite a inserção de um identificador para localizar o cadastro e iniciar o fluxo de redefinição de acesso.",
-    "testada": false,
-    "tags": [
-      "alvo/pessoa-identidade",
-      "alvo/usuario-email",
-      "func/validacao-status",
-      "plataforma/web",
-      "acesso/gratuito"
-    ],
-    "utilidade_Osint": "No escopo de investigações digitais e verificação de pegada digital, este endpoint serve como uma ferramenta de validação ativa. Ao inserir o CPF ou o e-mail de um alvo, o comportamento do sistema (seja avançando para a próxima etapa ou exibindo alertas de \"usuário não encontrado\") permite ao investigador confirmar se o alvo possui uma conta ativa na maior plataforma de consumo do Brasil, fornecendo indícios sobre seus hábitos digitais e confirmando a validade de um e-mail ou documento conhecido.",
-    "notes": "* A plataforma implementa mecanismos de proteção (como CAPTCHAs e WAF) para mitigar consultas automatizadas em massa, tornando o processo ideal para validações pontuais em alvos pré-determinados.\n* A confirmação de um cadastro ativo no Reclame Aqui pode direcionar o investigador a buscar o perfil público do usuário na plataforma, onde frequentemente constam históricos de reclamações que revelam dados geográficos, relações comerciais e hábitos de consumo do alvo.\n* **Alerta (2026-11-13)**: Tela de recuperação de senha ou de login usada para checar se um e-mail, CPF ou telefone tem conta. Pode notificar o titular, registra o IP de quem consulta e não deve ser automatizada: só manual e com base legal."
-  },
-  {
-    "id": "Recuperação de Senha - Casas Bahia",
-    "title": "Recuperação de Senha - Casas Bahia",
-    "url": "https://cliente.casasbahia.com.br/recuperacao/esqueci-senha",
-    "tipo": "Portal Web de Atendimento ao Cliente / Mecanismo de Validação Passiva",
-    "utilidade": "Validação da existência de contas e vínculo de CPF a partir de fluxos de recuperação de senha.",
-    "descricao": "A página de recuperação de senha do portal do cliente das Casas Bahia é uma interface pública desenvolvida para permitir que usuários legítimos restabeleçam o acesso às suas contas informando identificadores civis, especificamente o CPF.",
-    "testada": false,
-    "tags": [
-      "alvo/pessoa-identidade",
-      "func/validacao-status",
-      "plataforma/web",
-      "acesso/gratuito"
-    ],
-    "utilidade_Osint": "No contexto de investigações digitais e engenharia reversa de dados cadastrais, a página é utilizada para realizar a validação passiva de vínculos institucionais e a existência de contas ativas vinculadas a um alvo sem alertá-lo.",
-    "notes": "* Permite verificar a existência de vínculo comercial de um determinado CPF sem gerar alertas, notificações por SMS ou e-mails de tentativa de invasão para o dispositivo do alvo na fase inicial de inserção do dado.\n* É ideal para compor rotinas de pivoting e enriquecimento de perfis durante investigações de fraude, verificação de identidade e engenharia social legítima.\n* **Alerta (2026-11-13)**: Tela de recuperação de senha ou de login usada para checar se um e-mail, CPF ou telefone tem conta. Pode notificar o titular, registra o IP de quem consulta e não deve ser automatizada: só manual e com base legal."
-  },
-  {
-    "id": "Recuperação de Senha - Claro",
-    "title": "Recuperação de Senha - Claro",
-    "url": "https://cadastro.claro.com.br/recuperar-senha",
-    "tipo": "Portal Web de Atendimento ao Cliente / Mecanismo de Validação Passiva",
-    "utilidade": "Validação da existência de contas e vínculo de CPF a partir de fluxos de recuperação de senha da operadora Claro.",
-    "descricao": "A página de recuperação de senha do portal de cadastro da operadora Claro é uma interface pública desenvolvida para permitir que clientes legítimos restabeleçam o acesso às suas contas de serviços residenciais ou móveis por meio da inserção de identificadores civis, especificamente o CPF.",
-    "testada": false,
-    "tags": [
-      "alvo/pessoa-identidade",
-      "func/validacao-status",
-      "plataforma/web",
-      "acesso/gratuito"
-    ],
-    "utilidade_Osint": "No contexto de investigações digitais, engenharia reversa de dados e inteligência de fontes abertas, a página é utilizada como um validador passivo para constatar o vínculo de um CPF com contas ativas na operadora sem alertar o alvo (não envia notificações ou SMS na etapa inicial de teste do dado).",
-    "notes": "* Permite ao analista confirmar se um determinado CPF possui serviços de telecomunicação contratados junto à Claro na fase inicial de inserção do dado, o que ajuda a direcionar investigações telefônicas posteriores (pivoting).\n* É recomendado utilizar a ferramenta na fase de levantamento de alvos e checagem de dados cadastrais, integrando o fluxo de testes passivos de validade cadastral junto a outras plataformas comerciais e governamentais.\n* **Alerta (2026-11-13)**: Tela de recuperação de senha ou de login usada para checar se um e-mail, CPF ou telefone tem conta. Pode notificar o titular, registra o IP de quem consulta e não deve ser automatizada: só manual e com base legal."
-  },
-  {
-    "id": "Recuperação de Senha - Extra Hipermercados",
-    "title": "Recuperação de Senha - Extra Hipermercados",
-    "url": "https://cliente.extra.com.br/recuperacao/esqueci-senha",
-    "tipo": "Portal Web de Atendimento ao Cliente / Mecanismo de Validação Passiva",
-    "utilidade": "Validação da existência de contas e vínculo de CPF a partir de fluxos de recuperação de senha.",
-    "descricao": "A página de recuperação de senha do portal do cliente do Extra é uma interface pública desenvolvida para permitir que usuários legítimos restabeleçam o acesso às suas contas informando identificadores civis, especificamente o CPF.",
-    "testada": false,
-    "tags": [
-      "alvo/pessoa-identidade",
-      "func/validacao-status",
-      "plataforma/web",
-      "acesso/gratuito"
-    ],
-    "utilidade_Osint": "No contexto de investigações digitais e engenharia reversa de dados cadastrais, a página é utilizada para realizar a validação passiva de vínculos institucionais e a existência de contas ativas vinculadas a um alvo sem alertá-lo.",
-    "notes": "* Permite verificar a existência de vínculo comercial de um determinado CPF sem gerar alertas, notificações por SMS ou e-mails de tentativa de invasão para o dispositivo do alvo na fase inicial de inserção do dado.\n* É ideal para compor rotinas de pivoting e enriquecimento de perfis durante investigações de fraude, verificação de identidade e engenharia social legítima.\n* **Alerta (2026-11-13)**: Tela de recuperação de senha ou de login usada para checar se um e-mail, CPF ou telefone tem conta. Pode notificar o titular, registra o IP de quem consulta e não deve ser automatizada: só manual e com base legal."
-  },
-  {
-    "id": "Recuperação de Senha - Magazine Luiza",
-    "title": "Recuperação de Senha - Magazine Luiza",
-    "url": "https://sacola.magazineluiza.com.br/n#/recuperar-senha",
-    "tipo": "Portal Web de Atendimento ao Cliente / Mecanismo de Validação Passiva",
-    "utilidade": "Validação da existência de contas e vínculo de CPF a partir de fluxos de recuperação de senha da plataforma Magazine Luiza.",
-    "descricao": "A página de recuperação de senha do portal de compras da Magazine Luiza é uma interface pública desenvolvida para permitir que usuários legítimos restabeleçam o acesso às suas contas informando identificadores civis, especificamente o CPF.",
-    "testada": false,
-    "tags": [
-      "alvo/pessoa-identidade",
-      "func/validacao-status",
-      "plataforma/web",
-      "acesso/gratuito"
-    ],
-    "utilidade_Osint": "No contexto de investigações digitais e engenharia reversa de dados cadastrais, a página é utilizada para realizar a validação passiva de vínculos institucionais e a existência de contas ativas vinculadas a um alvo sem alertá-lo.",
-    "notes": "- **Ponto de Atenção:** Conforme materiais de apoio, este método específico não alerta o alvo sobre a tentativa de recuperação em etapas iniciais de visualização, mas o uso excessivo pode gerar bloqueios de IP (WAF).\n- **Dica:** Utilize para validar se um CPF obtido em vazamentos ou fontes governamentais ainda é utilizado pelo alvo em serviços de varejo.\n* **Alerta (2026-11-13)**: Tela de recuperação de senha ou de login usada para checar se um e-mail, CPF ou telefone tem conta. Pode notificar o titular, registra o IP de quem consulta e não deve ser automatizada: só manual e com base legal."
-  },
-  {
     "id": "Rede CNPJ",
     "title": "Rede CNPJ",
     "url": "https://www.redecnpj.com/r/",
@@ -7077,7 +6932,7 @@ const TOOLS = [
       "opsec/personas"
     ],
     "utilidade_Osint": "No escopo de operações de inteligência de fontes abertas (humanas e digitais - HUMINT/SOCMINT), a plataforma atua principalmente na vertente defensiva e de preparação. Não sendo uma ferramenta de busca ativa, ela é empregada para a criação e refinamento de *sock puppets* (personas/perfis dissimulados), permitindo gerar rostos hiper-realistas e customizados ou alterar mídias existentes para conferir credibilidade e profundidade a identidades operacionais falsas, mitigando riscos de detecção por busca reversa de imagem.",
-    "notes": "* A ferramenta é ideal para burlar sistemas básicos de detecção de imagens duplicadas na internet, visto que a fusão de rostos cria uma assinatura digital única e inédita para a foto da persona.\n* Por processar os dados em servidores de terceiros, o analista deve evitar o upload de fotografias reais de alvos ou de dados sensíveis da investigação que possam violar o princípio de privacidade e sigilo da operação.\n* **Verificação (2026-11-12)**: Edição e troca de rosto por IA com créditos. Página no ar; não exercitado.",
+    "notes": "* A fusão de rostos gera uma imagem inédita, o que evita usar na persona a foto de uma pessoa real.\n* Por processar os dados em servidores de terceiros, o analista deve evitar o upload de fotografias reais de alvos ou de dados sensíveis da investigação que possam violar o princípio de privacidade e sigilo da operação.\n* **Verificação (2026-11-12)**: Edição e troca de rosto por IA com créditos. Página no ar; não exercitado.",
     "lastVerified": "2026-11-12"
   },
   {
@@ -7192,25 +7047,6 @@ const TOOLS = [
     "utilidade_Osint": "No escopo de investigações de cibercrime, due diligence de pessoas físicas e inteligência contra ameaças (Cyber Threat Intelligence), a plataforma serve como um centralizador de inteligência de reputação. Ao inserir um dado conhecido do alvo, o analista consegue identificar se aquele identificador específico já foi utilizado em campanhas de phishing, golpes financeiros ou se possui histórico de denúncias ativas pela comunidade de segurança, facilitando a atribuição e o mapeamento de riscos.",
     "notes": "* Os resultados dependem de relatos prévios e da alimentação de bases de dados de segurança. A ausência de registros na plataforma não garante, isoladamente, que o identificador ou perfil investigado seja legítimo ou seguro.\n* A plataforma funciona de forma complementar a outras ferramentas de SOCMINT e CYBINT, sendo ideal para a triagem inicial de perfis em plataformas de vendas ou contatos não solicitados recebidos pelo analista.\n* **Verificação (2026-10-25)**: Busca direta por URL: `https://scamsearch.io/search_report?searchoption=all&search={termo}`. **Sem** o parâmetro `searchoption` o servidor responde HTTP 500 (com stack trace do Laravel). A base é colaborativa e não verificada.\n* **Verificação (2026-10-26)**: Funciona sem login; busca GET simples (/search_report?searchoption=email&search={email}). Base colaborativa de golpistas denunciados: útil para checar se o e-mail/username do alvo já foi reportado em golpes.\n* **Verificação (2026-10-28)**: Por username: /search_report?searchoption=user&search={username} (o valor \"username\" não existe e derruba o site numa página de erro).",
     "lastVerified": "2026-10-28"
-  },
-  {
-    "id": "Senha Web (Recuperação de Senha) - Prefeitura de São Paulo",
-    "title": "Senha Web (Recuperação de Senha) - Prefeitura de São Paulo",
-    "url": "https://senhaweb.prefeitura.sp.gov.br/FormsPwdRecovery/PasswordRecovery.aspx",
-    "tipo": "Portal de Serviços Governamentais / Validador de Identidade",
-    "utilidade": "Validação da existência cadastral de pessoas físicas (CPF) ou jurídicas (CNPJ) junto ao município de São Paulo via mecanismo de recuperação de conta",
-    "descricao": "A página de recuperação de senha do sistema \"Senha Web\" da Prefeitura de São Paulo é um serviço digital voltado a cidadãos e empresas estabelecidas no município. O sistema gerencia o acesso a serviços tributários e administrativos municipais (como emissão de Notas Fiscais Paulistanas e consulta de IPTU).",
-    "testada": false,
-    "tags": [
-      "alvo/pessoa-identidade",
-      "alvo/empresa",
-      "fonte/registros-publicos-gov",
-      "func/validacao-status",
-      "plataforma/web",
-      "acesso/gratuito"
-    ],
-    "utilidade_Osint": "No contexto investigativo, este endpoint atua como uma ferramenta de pivotagem e validação passiva/ativa de identidade. Ao inserir um CPF ou CNPJ sob análise, o sistema retorna mensagens de erro diferenciadas ou avança na etapa de recuperação caso o documento possua um cadastro ativo e homologado na Prefeitura de São Paulo, permitindo confirmar o vínculo administrativo ou operacional do alvo com a capital paulista.",
-    "notes": "* É uma fonte valiosa para checar se uma determinada empresa fantasma ou indivíduo possui de fato operações ou histórico formal registrado no município de São Paulo.\n* Modificações frequentes nas políticas de CAPTCHA ou limites de requisição por IP na infraestrutura da Prefeitura de São Paulo podem dificultar ou mitigar tentativas de consultas automatizadas ou massivas (*scrapers*).\n* **Alerta (2026-11-13)**: Tela de recuperação de senha ou de login usada para checar se um e-mail, CPF ou telefone tem conta. Pode notificar o titular, registra o IP de quem consulta e não deve ser automatizada: só manual e com base legal."
   },
   {
     "id": "Seção de Acesso à Informação - ICMBio",
@@ -7476,7 +7312,7 @@ const TOOLS = [
     "url": "https://sms24.me/",
     "tipo": "Plataforma de Números Virtuais Temporários",
     "utilidade": "Recebimento de SMS online através de números temporários públicos para validação de contas e serviços",
-    "descricao": "O SMS24.me é um serviço online que disponibiliza números de telefone públicos e temporários de diversos países. A plataforma permite receber mensagens de texto (SMS) diretamente pela interface web, sendo amplamente utilizada para contornar etapas de verificação de número de telefone em cadastros digitais e ativações de serviços na internet.",
+    "descricao": "O SMS24.me é um serviço online que disponibiliza números de telefone públicos e temporários de diversos países. A plataforma permite receber mensagens de texto (SMS) diretamente pela interface web, sendo usada para receber códigos de confirmação em cadastros e ativações de serviços na internet.",
     "testada": true,
     "tags": [
       "plataforma/web",
@@ -7484,7 +7320,7 @@ const TOOLS = [
       "opsec/personas"
     ],
     "utilidade_Osint": "No âmbito de investigações em fontes abertas, a plataforma funciona como um recurso de apoio para a criação e manutenção de infraestruturas de investigação dissimuladas, permitindo a validação de contas sem a necessidade de expor dados de telefonia reais.",
-    "notes": "- **Ponto de Atenção:** Por ser um serviço público, as mensagens recebidas são visíveis para qualquer usuário que acessar o número no site. Nunca utilize esta ferramenta para contas que contenham dados sensíveis ou informações reais do investigador.\n- **Dica:** Excelente para testes rápidos de bypass de SMS e para verificar se um serviço específico aceita números virtuais/VOIP ou exige números de operadoras convencionais (Mobile).\n* **Verificação (2026-11-12)**: Números temporários grátis e PÚBLICOS para receber SMS (redireciona para /pt). Qualquer pessoa vê as mensagens: não usar em conta que importe.",
+    "notes": "- **Ponto de Atenção:** Por ser um serviço público, as mensagens recebidas são visíveis para qualquer usuário que acessar o número no site. Nunca utilize esta ferramenta para contas que contenham dados sensíveis ou informações reais do investigador.\n- **Dica:** Útil para verificar se um serviço específico aceita números virtuais/VOIP ou exige números de operadoras convencionais (Mobile).\n* **Verificação (2026-11-12)**: Números temporários grátis e PÚBLICOS para receber SMS (redireciona para /pt). Qualquer pessoa vê as mensagens: não usar em conta que importe.",
     "lastVerified": "2026-11-12"
   },
   {
@@ -7493,15 +7329,15 @@ const TOOLS = [
     "url": "https://smspva.com/",
     "tipo": "Serviço de Ativação SMS (Simulação de Dispositivos e Telefonia Móvel)",
     "utilidade": "Recebimento de SMS online por meio de números temporários para ativação e validação de contas em plataformas digitais",
-    "descricao": "O SMSPVA é uma plataforma comercial que fornece números de telefone temporários de múltiplos países para o recebimento de mensagens de texto (SMS). O serviço é estruturado para contornar processos de verificação automatizada (PVA - *Phone Verification SMS*) em plataformas da internet, redes sociais, aplicativos de mensageria e serviços financeiros.",
+    "descricao": "O SMSPVA é uma plataforma comercial que fornece números de telefone temporários de múltiplos países para o recebimento de mensagens de texto (SMS). O serviço fornece números para a verificação por telefone (PVA - *Phone Verification SMS*) exigida em plataformas da internet, redes sociais, aplicativos de mensageria e serviços financeiros.",
     "testada": true,
     "tags": [
       "plataforma/web",
       "acesso/limitado",
       "opsec/personas"
     ],
-    "utilidade_Osint": "No âmbito de investigações digitais, engenharia social reversa e infiltração tática, a plataforma atua como um recurso de suporte essencial para contornar bloqueios cadastrais e manter a proteção do analista ao interagir com ambientes controlados ou restritos.",
-    "notes": "- **Ponto de Atenção:** Por ser um serviço público, as mensagens recebidas são visíveis para qualquer usuário que acessar o número no site. Nunca utilize esta ferramenta para contas que contenham dados sensíveis ou informações reais do investigador.\n- **Dica:** Excelente para testes rápidos de bypass de SMS e para verificar se um serviço específico aceita números virtuais/VOIP ou exige números de operadoras convencionais (Mobile).\n* **Verificação (2026-11-12)**: Números virtuais para receber SMS de verificação (pago, reCAPTCHA). Não comprado; mesmas ressalvas do 5Sim.",
+    "utilidade_Osint": "Em investigações digitais, a plataforma apoia a criação de personas de investigação, mantendo o número pessoal do analista fora dos cadastros.",
+    "notes": "- **Ponto de Atenção:** Por ser um serviço público, as mensagens recebidas são visíveis para qualquer usuário que acessar o número no site. Nunca utilize esta ferramenta para contas que contenham dados sensíveis ou informações reais do investigador.\n- **Dica:** Útil para verificar se um serviço específico aceita números virtuais/VOIP ou exige números de operadoras convencionais (Mobile).\n* **Verificação (2026-11-12)**: Números virtuais para receber SMS de verificação (pago, reCAPTCHA). Não comprado; mesmas ressalvas do 5Sim.",
     "lastVerified": "2026-11-12"
   },
   {
@@ -7848,25 +7684,6 @@ const TOOLS = [
     "notes": "* Ideal para cenários críticos em que o analista necessita acessar portais ou fóruns hostis sem riscos de contaminação por malware persistente ou rastreamento físico do dispositivo de origem.\n* Como o sistema opera de forma amnésica por padrão, é crucial configurar um volume persistente criptografado (Encrypted Persistent Storage) caso o investigador precise armazenar evidências, relatórios ou chaves de segurança entre diferentes sessões de trabalho."
   },
   {
-    "id": "Tela de Recuperação de Senha - Vivo (Meu Vivo)",
-    "title": "Tela de Recuperação de Senha - Vivo (Meu Vivo)",
-    "url": "https://mvfront.vivo.com.br/password-recovery#/welcome-vivo/recover-password",
-    "tipo": "Portal Web / Endpoint de Autenticação e Recuperação",
-    "utilidade": "Validação de existência de contas e cruzamento de identificadores (CPF, telefone ou e-mail) atrelados à operadora Vivo.",
-    "descricao": "A página de recuperação de senha do portal Meu Vivo é o endpoint oficial da operadora de telecomunicações Vivo destinado a permitir que usuários restabeleçam o acesso às suas contas informando dados cadastrais, como CPF, e-mail ou número de telefone celular.",
-    "testada": false,
-    "tags": [
-      "alvo/telefone",
-      "alvo/usuario-email",
-      "alvo/pessoa-identidade",
-      "func/validacao-status",
-      "plataforma/web",
-      "acesso/gratuito"
-    ],
-    "utilidade_Osint": "No contexto de investigações de pegada digital, verificação de identidade e engenharia reversa de dados de contato, este endpoint atua como um validador de dados numéricos e textuais. Ele permite determinar se um determinado identificador está ativamente associado a um cliente da operadora, auxiliando na redução do escopo de alvos e na confirmação de vínculos.",
-    "notes": "* A análise depende da observação das respostas visuais e comportamentais da aplicação (ex: mensagens de erro diferenciadas como \"Usuário não encontrado\" versus o direcionamento para o envio de um token de validação).\n* Mecanismos de proteção modernos (como CAPTCHAs, limites de requisição por IP ou rate limiting) podem ser acionados caso múltiplas consultas consecutivas sejam realizadas, exigindo o monitoramento da OPSEC do analista.\n* **Alerta (2026-11-13)**: Tela de recuperação de senha ou de login usada para checar se um e-mail, CPF ou telefone tem conta. Pode notificar o titular, registra o IP de quem consulta e não deve ser automatizada: só manual e com base legal."
-  },
-  {
     "id": "Teletudo Busqueitor",
     "title": "Teletudo Busqueitor",
     "url": "https://teletudo.com/busqueitor",
@@ -7899,7 +7716,7 @@ const TOOLS = [
       "opsec/personas"
     ],
     "utilidade_Osint": "Na preparação de investigações, o Tempail fornece endereços de e-mail descartáveis para cadastros rápidos em fóruns, sites e serviços que exigem confirmação por e-mail, sem expor contas pessoais ou institucionais do analista.",
-    "notes": "* Ideal para contornar formulários de captura e paywalls que exigem um cadastro rápido com e-mail para liberação de downloads de relatórios ou acesso a ferramentas de consulta.\n* Por se tratar de um e-mail público e temporário, não deve ser utilizado para armazenar informações sensíveis da investigação, visto que o acesso à caixa de entrada é perdido assim que a sessão é encerrada ou o endereço expira.\n* **Verificação (2026-11-12)**: Gera na hora uma caixa de e-mail temporária pública e mostra a caixa de entrada (aguardando e-mails), com cópia, QR e exclusão. Caixa é descartável e pode ser lida por quem souber o endereço: não usar em conta que precise ser recuperada.",
+    "notes": "* Útil quando um site pede cadastro com e-mail para liberar relatórios ou ferramentas de consulta, sem expor o e-mail do analista.\n* Por se tratar de um e-mail público e temporário, não deve ser utilizado para armazenar informações sensíveis da investigação, visto que o acesso à caixa de entrada é perdido assim que a sessão é encerrada ou o endereço expira.\n* **Verificação (2026-11-12)**: Gera na hora uma caixa de e-mail temporária pública e mostra a caixa de entrada (aguardando e-mails), com cópia, QR e exclusão. Caixa é descartável e pode ser lida por quem souber o endereço: não usar em conta que precise ser recuperada.",
     "lastVerified": "2026-11-12"
   },
   {
@@ -8160,7 +7977,7 @@ const TOOLS = [
       "func/analise-midia-integridade"
     ],
     "utilidade_Osint": "No escopo da Inteligência de Fontes Abertas, a ferramenta cumpre papel analítico estático e de pós-processamento de evidências textuais. Ela auxilia o investigador na avaliação de autenticidade de manifestos, postagens em fóruns, relatórios ou vazamentos de informações, ajudando a identificar se o material analisado possui indícios técnicos de geração em massa por IA. Seguindo estritamente a restrição de acesso a dados da rede, a plataforma opera exclusivamente recebendo dados brutos previamente coletados pelo analista.",
-    "notes": "* Deve ser empregada como um vetor complementar de validação analítica para a avaliação de desinformação (Fake News) e atribuição de campanhas de influência digital (Astroturfing).\n* O processamento limita-se à análise estática dos caracteres inseridos pelo operador na caixa de entrada, garantindo que o conteúdo examinado não sofra vazamentos por meio de requisições ativas ou varreduras na infraestrutura viva da rede durante o diagnóstico.\n* **Verificação (2026-11-14)**: Portal da Undetectable AI (humanizador de texto, detectores). No lote de imagem, o detector de imagem deu FALSO POSITIVO em foto real.\n* **Entrada unificada (2026-11-13)**: incorpora a antiga entrada \"Undetectable AI - Detector de Imagem de IA\" (https://undetectable.ai/pt-br/ai-image-detector).\n* Essencial para a triagem e auditoria forense inicial de fotografias de perfis de cobertura (*sock puppets*) suspeitos ou de imagens propagandísticas associadas a alvos sob monitoramento.\n* Visto que o processamento se restringe à análise matemática interna do arquivo inserido na caixa de upload, o analista tem a garantia de OPSEC de que a consulta não gerará tráfego de rede rastreável nos servidores ou domínios vinculados ao alvo.\n* **Verificação (2026-11-12)**: FALSO POSITIVO no teste: uma foto real pública do Cristo Redentor foi classificada como \"provavelmente criada por IA\" (15% real); a imagem de difusão também (3% real). Serve no máximo como indício.\n* **Entrada unificada (2026-11-13)**: incorpora a antiga entrada \"Undetectable AI Humanizer\" (https://undetectable.ai/ai-humanizer).\n* Útil para simular a viabilidade técnica de campanhas de desinformação que buscam burlar algoritmos automatizados de redes sociais e canais de imprensa.\n* Por se tratar de um processador estático de caracteres em ambiente controlado, garante que o conteúdo inserido pelo operador não gere requisições ativas ou tráfego de rede rastreável em infraestruturas externas de alvos sob monitoramento.\n* **Verificação (2026-11-14)**: Reescreve texto gerado por IA para escapar de detectores. Uso OSINT duvidoso (o oposto: detectar texto de IA); manter só como referência do que existe.",
+    "notes": "* Deve ser empregada como um vetor complementar de validação analítica para a avaliação de desinformação (Fake News) e atribuição de campanhas de influência digital (Astroturfing).\n* O processamento limita-se à análise estática dos caracteres inseridos pelo operador na caixa de entrada, garantindo que o conteúdo examinado não sofra vazamentos por meio de requisições ativas ou varreduras na infraestrutura viva da rede durante o diagnóstico.\n* **Verificação (2026-11-14)**: Portal da Undetectable AI (humanizador de texto, detectores). No lote de imagem, o detector de imagem deu FALSO POSITIVO em foto real.\n* **Entrada unificada (2026-11-13)**: incorpora a antiga entrada \"Undetectable AI - Detector de Imagem de IA\" (https://undetectable.ai/pt-br/ai-image-detector).\n* Essencial para a triagem e auditoria forense inicial de fotografias de perfis de cobertura (*sock puppets*) suspeitos ou de imagens propagandísticas associadas a alvos sob monitoramento.\n* Visto que o processamento se restringe à análise matemática interna do arquivo inserido na caixa de upload, o analista tem a garantia de OPSEC de que a consulta não gerará tráfego de rede rastreável nos servidores ou domínios vinculados ao alvo.\n* **Verificação (2026-11-12)**: FALSO POSITIVO no teste: uma foto real pública do Cristo Redentor foi classificada como \"provavelmente criada por IA\" (15% real); a imagem de difusão também (3% real). Serve no máximo como indício.\n* **Entrada unificada (2026-11-13)**: incorpora a antiga entrada \"Undetectable AI Humanizer\" (https://undetectable.ai/ai-humanizer).\n* Ajuda a entender como textos gerados por IA podem escapar de detectores automáticos, o que é útil ao avaliar suspeitas de desinformação.\n* Por se tratar de um processador estático de caracteres em ambiente controlado, garante que o conteúdo inserido pelo operador não gere requisições ativas ou tráfego de rede rastreável em infraestruturas externas de alvos sob monitoramento.\n* **Verificação (2026-11-14)**: Reescreve texto gerado por IA para escapar de detectores. Uso OSINT duvidoso (o oposto: detectar texto de IA); manter só como referência do que existe.",
     "lastVerified": "2026-11-14"
   },
   {
@@ -8563,7 +8380,7 @@ const TOOLS = [
       "acesso/limitado"
     ],
     "utilidade_Osint": "No escopo de investigações cibernéticas e inteligência societária, a plataforma atua como um poderoso recurso de *pivoting*. Ela viabiliza o mapeamento completo de infraestruturas online associadas a um alvo, permitindo desvendar redes de sites fraudulentos, campanhas de desinformação ou portfólios ocultos de propriedades digitais de uma determinada organização ou indivíduo.",
-    "notes": "* É extremamente útil para contornar mecanismos básicos de privacidade de WHOIS, permitindo encontrar dados históricos que foram indexados pela plataforma antes de o proprietário ocultar as informações.\n* Devido à volumetria de dados, recomenda-se usar termos exatos ou e-mails específicos para evitar falsos positivos causados por homônimos em nomes de empresas ou indivíduos.\n* **Verificação (2026-10-26)**: Reverse WHOIS por e-mail sem login mostra só 2 resultados (resto exige conta). **OPSEC**: o painel público \"Recent Reverse WHOIS Lookup\" expõe as consultas feitas — não buscar e-mail de alvo real sem conta.",
+    "notes": "* Útil para consultar dados históricos que a plataforma indexou antes de o proprietário ativar a proteção de privacidade do WHOIS.\n* Devido à volumetria de dados, recomenda-se usar termos exatos ou e-mails específicos para evitar falsos positivos causados por homônimos em nomes de empresas ou indivíduos.\n* **Verificação (2026-10-26)**: Reverse WHOIS por e-mail sem login mostra só 2 resultados (resto exige conta). **OPSEC**: o painel público \"Recent Reverse WHOIS Lookup\" expõe as consultas feitas — não buscar e-mail de alvo real sem conta.",
     "lastVerified": "2026-10-26"
   },
   {
@@ -8582,7 +8399,7 @@ const TOOLS = [
       "acesso/gratuito"
     ],
     "utilidade_Osint": "No escopo de investigações cibernéticas e auditoria de infraestrutura digital, a ferramenta simplifica a fase de reconhecimento técnico e inteligência. Ela permite ao analista mapear de forma passiva onde os ativos digitais de um alvo estão fisicamente localizados e qual empresa hospeda o conteúdo, fornecendo os subsídios necessários para o envio de solicitações de preservação de dados ou para desvendar redes de sites fraudulentos interconectados no mesmo servidor.",
-    "notes": "* É extremamente útil para identificar os provedores de sites de phishing ou de campanhas fraudulentas e descobrir os canais adequados para denúncias de abuso (*abuse desk*).\n* Caso o site investigado utilize redes de entrega de conteúdo ou proxies reversos de proteção (como a Cloudflare), a ferramenta exibirá o provedor da rede de proteção e não o servidor original de hospedagem (*backend*), demandando técnicas complementares de descoberta de IP real se o objetivo for contornar essa barreira.\n* **Verificação (2026-11-12)**: Deu IP e nameservers, mas deixou o provedor em branco. Site de reviews com afiliados.",
+    "notes": "* É extremamente útil para identificar os provedores de sites de phishing ou de campanhas fraudulentas e descobrir os canais adequados para denúncias de abuso (*abuse desk*).\n* Caso o site investigado utilize redes de entrega de conteúdo ou proxies reversos de proteção (como a Cloudflare), a ferramenta exibirá o provedor da rede de proteção e não o servidor original de hospedagem (*backend*).\n* **Verificação (2026-11-12)**: Deu IP e nameservers, mas deixou o provedor em branco. Site de reviews com afiliados.",
     "lastVerified": "2026-11-12"
   },
   {

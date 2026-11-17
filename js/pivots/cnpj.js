@@ -67,7 +67,6 @@ registerPivot({
           },
           "excluir": [
             "Certidão de Feitos Trabalhistas (TRT-3)",
-            "Canal de Verificação de Canais Oficiais - Porto Seguro",
             "Consulta de Frota Geral - ANTAQ",
             "Consulta de Embarcações - ANTAQ"
           ]
@@ -120,7 +119,6 @@ registerPivot({
           },
           "excluir": [
             "Certidão de Feitos Trabalhistas (TRT-3)",
-            "Canal de Verificação de Canais Oficiais - Porto Seguro",
             "Consulta de Frota Geral - ANTAQ",
             "Consulta de Embarcações - ANTAQ"
           ]
@@ -370,9 +368,6 @@ registerPivot({
               "id": "RocketReach",
               "aplicacao": "Plataforma de inteligência de contatos comerciais B2B que indexa milhões de perfis profissionais. É uma adição ideal para correlacionar domínios corporativos a perfis no LinkedIn, mapeando diretamente a estrutura de tomadores de decisão da companhia e levantando números de telefone e e-mails corporativos de nível executivo."
             }
-          ],
-          "excluir": [
-            "Canal de Verificação de Canais Oficiais - Porto Seguro"
           ]
         }
       ]
@@ -447,7 +442,6 @@ registerPivot({
           },
           "excluir": [
             "Certidão de Feitos Trabalhistas (TRT-3)",
-            "Canal de Verificação de Canais Oficiais - Porto Seguro",
             "Consulta de Frota Geral - ANTAQ",
             "Consulta de Embarcações - ANTAQ"
           ]
