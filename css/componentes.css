@@ -1,0 +1,99 @@
+/* ============================================================================
+   componentes.css — componentes de UI reutilizados por mais de uma página
+   ----------------------------------------------------------------------------
+   Contém: selos de OPSEC, etiquetas (tags) de ferramenta e o "kit" de cards
+   de ferramenta detalhada. Depende dos tokens de base.css.
+   Carregue depois de base.css e antes do CSS específico da página.
+   ========================================================================== */
+
+/* ─── SELOS DE NÍVEL OPSEC ───────────────────────────────────────────────────
+   Usados na pivotagem (módulos) e no motor de trilhas.
+   Níveis: passivo · cautela · ativo · preparacao (semi-ativo = alias legado). */
+.opsec-badge {
+  font-family: var(--mono);
+  font-size: .65rem;
+  padding: 3px 8px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.opsec-badge.passivo    { background: rgba(0,255,136,.10); color: var(--green); border: 1px solid var(--green-dim); }
+.opsec-badge.cautela,
+.opsec-badge.semi-ativo { background: rgba(255,184,0,.10); color: var(--amber); border: 1px solid var(--amber); }
+.opsec-badge.ativo      { background: rgba(255,68,68,.10);  color: var(--red);   border: 1px solid var(--red); }
+.opsec-badge.preparacao { background: rgba(77,184,255,.10); color: var(--blue);  border: 1px solid var(--blue); }
+
+/* ─── ETIQUETAS DE FERRAMENTA (TAGS) ─────────────────────────────────────────
+   Pequenos selos ao lado do nome de uma ferramenta (acesso, fora do catálogo, etc.).
+   Usados na pivotagem (lista detalhada) e no motor de trilhas. */
+.pv-tag {
+  font-family: var(--mono);
+  font-size: .62rem;
+  padding: 1px 6px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  color: var(--text-dim);
+}
+.pv-tag--warn { color: var(--amber); border-color: var(--amber); }
+
+/* ─── KIT: CARD DE FERRAMENTA DETALHADA ──────────────────────────────────────
+   Bloco com nome (link), selos e textos de uma ferramenta. */
+.tool-detail-card {
+  margin-bottom: 8px;
+  padding: 12px 14px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+.tool-header   { margin-bottom: 6px; font-family: var(--mono); font-size: var(--fs-sm); }
+.tool-link     { color: var(--blue); text-decoration: none; font-weight: bold; }
+.tool-link:hover { text-decoration: underline; }
+.tool-name     { color: var(--blue); font-weight: bold; }
+.tool-url-text { color: var(--text-dim); font-size: var(--fs-sm); opacity: .85; }
+
+/* Textos internos do card */
+.tool-text        { margin-bottom: 4px; font-family: var(--sans); font-size: var(--fs-sm); line-height: 1.5; }
+.tool-text strong { color: var(--text); }
+.tool-text--alerta{ color: var(--red); }        /* aviso de passo que pode alertar o alvo */
+.tool-desc        { color: var(--text-dim); }
+.tool-uso         { color: var(--text); }
+.tool-aplicacao   { color: var(--text-dim); margin-bottom: 0; }
+
+/* Listas de ferramentas (chips simples ou cards empilhados) */
+.tools-title {
+  margin-bottom: 10px;
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+.step-tools          { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.step-tools-detailed { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+
+/* Chip de ferramenta (modo simples) */
+.tool-chip {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: var(--fs-sm);
+  color: var(--green);
+  background: rgba(0,255,136,.05);
+  border: 1px solid rgba(0,255,136,.2);
+}
+.tool-chip:hover {
+  border-color: var(--green);
+  background: rgba(0,255,136,.08);
+  transform: translateY(-1px);
+}
+
+/* ─── BLOCO "OUTRAS DO CATÁLOGO" (details) ───────────────────────────────────
+   Usado na pivotagem e no motor de trilhas para listas secundárias. */
+.pv-ferr summary {
+  margin: 6px 0;
+  color: var(--green-dim);
+  font-family: var(--mono);
+  font-size: .72rem;
+  cursor: pointer;
+}
+.pv-ferr--mt { margin-top: 10px; }

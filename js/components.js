@@ -8,6 +8,7 @@ const UI = {
         <div class="logo">OSINT<span>LIPU</span></div>
         <div class="header-meta">
           <a class="header-nav-link is-catalogo" href="${basePath}index.html">[ CATÁLOGO ]</a>
+          <a class="header-nav-link is-pivotagem" href="${basePath}pages/pivotagem.html">[ PIVOTAGEM ]</a>
           <div>STATUS: <span class="header-status">● OFFLINE</span></div>
         </div>
       </header>

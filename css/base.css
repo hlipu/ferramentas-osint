@@ -106,6 +106,7 @@ header {
 /* Links de navegação do topo (cor por destino) */
 .header-nav-link { text-decoration: none; font-family: var(--mono); }
 .header-nav-link.is-catalogo   { color: var(--blue); }
+.header-nav-link.is-pivotagem  { color: var(--amber); }
 .header-status { color: var(--green); }
 
 /* ─── 04. RODAPÉ ─────────────────────────────────────────────────────────── */

@@ -41,6 +41,24 @@ link e descrição das ferramentas ativas. Dá para levar num pendrive.
 Ferramentas de apoio ao investigador, como VPN, mapas e editores, não têm etiqueta de alvo: servem para
 qualquer investigação.
 
+## Pivotagem
+
+A aba **[ PIVOTAGEM ]**, no topo, ajuda a planejar o que dá para descobrir a partir de um dado que
+você já tem.
+
+1. Escolha o tipo de dado: e-mail, CPF, telefone, CNPJ, nome de usuário, domínio etc. Digitar o valor
+   é opcional. Se você colar um, a página reconhece o tipo sozinha e, no caso de e-mail, diz se é
+   pessoal, de domínio próprio ou descartável.
+2. Um diagrama mostra os objetivos possíveis, os passos de cada um e o que cada passo pode render.
+   Esse resultado vira o ponto de partida da próxima pesquisa.
+3. Clique num passo para ver as ferramentas indicadas e marque-o como concluído quando terminar.
+4. Use as chaves **esconder pagas** e **só passivo** para filtrar. O botão **limpar** volta ao início.
+
+O nó **preparar ambiente** reúne os cuidados de proteção de quem investiga, antes da primeira
+consulta.
+
+O valor digitado e o progresso não ficam salvos no navegador: somem ao limpar ou fechar a página.
+
 ## Testes práticos
 
 As ferramentas foram testadas na prática entre outubro e novembro de 2026. O resultado está nas **Notas
