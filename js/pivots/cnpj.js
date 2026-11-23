@@ -9,7 +9,6 @@ registerPivot({
   "icone": "🏢",
   "titulo": "Investigação Corporativa (CNPJ)",
   "subtitulo": "// Roteiro metodológico para validação, mapeamento de contratos, compliance, infraestrutura e rastreio patrimonial.",
-  "imagem": "../img/trilha-cnpj.jpg",
   "modulos": [
     {
       "num": "01",

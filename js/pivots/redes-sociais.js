@@ -9,7 +9,6 @@ registerPivot({
   "icone": "📱",
   "titulo": "Inteligência em Redes Sociais (SOCMINT)",
   "subtitulo": "// Roteiro metodológico para mapeamento de perfis, análise de grafos (SNA), forense de mídias sociais e operação segura de personas.",
-  "imagem": "../img/trilha-redes-sociais.jpg",
   "modulos": [
     {
       "num": "01",

@@ -193,9 +193,7 @@ button.tg-no:focus-visible { outline: 1px solid var(--green); outline-offset: 2p
   .tg-tools { grid-template-columns: 1fr; }
 }
 
-/* ─── TRAZIDOS DE trilhas.css (catálogo completo) ───────────────────────────
-   Na versão pública não há a página de Trilhas; estes estilos de chips, notas e
-   botões-link são usados aqui. */
+/* ─── Chips, notas e botões-link ──────────────────────────────────────────── */
 .pv-chip {
   display: inline-flex; align-items: center; gap: 4px; padding: 3px 9px; border-radius: 12px;
   border: 1px solid var(--c); background: color-mix(in srgb, var(--c) 12%, transparent);

@@ -9,7 +9,6 @@ registerPivot({
   "icone": "✉️",
   "titulo": "Investigação por E-mail",
   "subtitulo": "// Roteiro metodológico para validação, enumeração, pivoting e identificação do titular de endereços eletrônicos.",
-  "imagem": "../img/trilha-email.jpg",
   "modulos": [
     {
       "num": "01",

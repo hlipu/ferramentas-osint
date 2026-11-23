@@ -9,7 +9,6 @@ registerPivot({
   "icone": "📞",
   "titulo": "Investigação Telefônica (TELINT)",
   "subtitulo": "// Roteiro metodológico para validação técnica, engenharia reversa, análise de mensageria e identificação de hardware mobile.",
-  "imagem": "../img/trilha-telefone.jpg",
   "modulos": [
     {
       "num": "01",

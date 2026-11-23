@@ -9,7 +9,6 @@ registerPivot({
   "icone": "💰",
   "titulo": "Investigação Financeira & Patrimonial (FININT)",
   "subtitulo": "// Roteiro metodológico para o rastreamento de criptoativos, decodificação de meios de pagamento, auditoria de dívidas e financiamento político.",
-  "imagem": "../img/trilha-financeiro.jpg",
   "modulos": [
     {
       "num": "01",

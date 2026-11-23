@@ -9,7 +9,6 @@ registerPivot({
   "icone": "🚗",
   "titulo": "Investigação de Veículos e Logística (VATINT)",
   "subtitulo": "// Roteiro metodológico para rastreamento de veículos terrestres, telemetria aérea, frotas marítimas e infraestrutura de transportes.",
-  "imagem": "../img/trilha-veiculos.jpg",
   "modulos": [
     {
       "num": "01",

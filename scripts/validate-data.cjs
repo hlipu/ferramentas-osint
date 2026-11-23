@@ -128,8 +128,6 @@ try {
         }
       }
     }
-    // Versão pública: as imagens das pivotagens (pivot.imagem) não são publicadas nem usadas
-    // pela página Pivotagem, então não são verificadas aqui.
   }
 
   vm.runInContext(readScript(path.join(root, 'js', 'data-trilhas.js')), context, {

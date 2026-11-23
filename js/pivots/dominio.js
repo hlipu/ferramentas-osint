@@ -9,7 +9,6 @@ registerPivot({
   "icone": "🌐",
   "titulo": "Investigação de Domínios (CYBINT)",
   "subtitulo": "// Roteiro metodológico para mapeamento de infraestrutura, enumeração, análise de ameaças e preservação de registros web.",
-  "imagem": "../img/trilha-dominio.jpg",
   "modulos": [
     {
       "num": "01",

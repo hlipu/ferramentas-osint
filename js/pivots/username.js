@@ -9,7 +9,6 @@ registerPivot({
   "icone": "🆔",
   "titulo": "Investigação de Nomes de Usuário (Username / Handle)",
   "subtitulo": "// Roteiro metodológico para enumeração em massa, rastreamento social, dorking, análise em vazamentos e identificação em Web3.",
-  "imagem": "../img/trilha-username.jpg",
   "modulos": [
     {
       "num": "01",

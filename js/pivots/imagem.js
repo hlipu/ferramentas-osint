@@ -9,7 +9,6 @@ registerPivot({
   "icone": "📷",
   "titulo": "Imagens & Mídias Visuais (IMINT / Forense Visual)",
   "subtitulo": "// Roteiro metodológico para extração de metadados, biometria facial, cronolocalização, visão computacional e preservação de evidências visuais.",
-  "imagem": "../img/trilha-imagem.jpg",
   "modulos": [
     {
       "num": "01",

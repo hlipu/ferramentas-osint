@@ -9,7 +9,6 @@ registerPivot({
   "icone": "👤",
   "titulo": "Investigação de Pessoas Físicas (CPF)",
   "subtitulo": "// Roteiro metodológico para qualificação civil, levantamento patrimonial, histórico judicial e pegada digital.",
-  "imagem": "../img/trilha-cpf.jpg",
   "modulos": [
     {
       "num": "01",
